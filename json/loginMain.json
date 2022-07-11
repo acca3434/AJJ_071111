@@ -1,0 +1,19 @@
+{
+    "user" : [
+        {
+            "name" : "주병현",
+            "email" : "wnqudgus1234@gmail.com",  
+            "pw" : "qwer1234"
+        },
+        {
+            "name" : "장지원",
+            "email" : "wnqudgus1234@gmail.com",  
+            "pw" : "qwer2345"
+        },
+        {
+            "name" : "안주영",
+            "email" : "wnqudgus1234@gmail.com",  
+            "pw" : "qwer3456"
+        }
+    ]
+}
