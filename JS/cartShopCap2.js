@@ -115,7 +115,6 @@ let cartAllList = document.getElementById("cartAllList");
 
   //220711 추가된 부분
 
-
 let cartNumberCount = 0;
 document.querySelector(".wrapper").style.visibility = "hidden"
 
@@ -247,7 +246,6 @@ document.querySelector(".wrapper").style.visibility = "hidden"
     })
   }
 }
-
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJbh(jbhcartUserShopInfor) {
   while (cartCurrentListCountjbh < cartListCol.length) {
@@ -282,6 +280,7 @@ if(cartShowListCountjbh==cartListCol.length){
   cartMoreShowBtnjbh.remove();
   }
 })
+
 
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJjw(jjwcartUserShopInfor) {
@@ -345,6 +344,7 @@ function cartListAppendAjy(ajycartUserShopInfor) {
    }
   }
 }
+
 //초기 상품목록 더보기 버튼을 눌렀을때
 cartMoreShowBtnajy.addEventListener("click",function(){
   cartShowListCountajy += 20;
@@ -356,8 +356,9 @@ if(cartShowListCountajy==cartListCol.length){
 })
 
   //장바구니 버튼을 눌렀을때
+  
   document.querySelector(".shopping-icon").addEventListener("click",function(){
-
+  
   cartModal.style.display = 'block';
 
   cartUserListPriceReal = cartUserListPrice.filter(a => a > 0).reduce((a, b) => a + b, 0)
@@ -393,6 +394,8 @@ if(cartShowListCountajy==cartListCol.length){
     document.getElementById("cart-Buy-list-row").removeChild(cartBuyListCol[btnCartListIndex]);
     cartListPText.splice(cartListPText[btnCartListIndex],1);
     document.querySelector(".cart-list-text").removeChild(document.getElementById("cartListPText"+[btnCartListIndex]));
+    cartNumberCount--;
+    document.querySelector(".circleNumber").innerHTML = cartNumberCount;
    })
 }
 cartBuyListRow.after(cartListSum)
@@ -761,7 +764,6 @@ document.getElementById("cartSearchText").addEventListener("focusout",function()
   }
 })
 
-
 //새상품순에 담을 json배열
 //새상품순을 눌렀을때
 let cartNewProductInfor;
@@ -817,10 +819,6 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
     })  
     cartNewProductInfor=0;
 })
-
-
-
-
 shopCap().then((cartUserShopInfor)=>{
 
   jbhcartUserShopInfor =  cartUserShopInfor.filter((a)=>{

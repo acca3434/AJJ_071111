@@ -73,21 +73,18 @@ body {
 
 .section2 {
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .section3 {
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .section4 {
   overflow: scroll;
+  overflow-x: hidden;
 }
-
-/* #ajy-cart-all-list {
-  width: 75vw;
-  overflow: scroll;
-  margin-left: calc(25vw / 2);
-} */
 
 .remocon {
   position: absolute;
