@@ -4,7 +4,7 @@
 p{
     margin-bottom: 0px;
 }
-button, input, optgroup, select, textarea{
+input, optgroup, select, textarea{
     border: 1px solid royalblue;
     background-color: skyblue;
 }
@@ -51,6 +51,7 @@ background-color: rgba(0, 0, 0, 0.4);
 overflow:scroll;
 overflow-x: hidden;
 position: absolute;
+border: 4px solid skyblue;
 top: 50%;
 left: 50%;
 width: 90%;
@@ -64,8 +65,8 @@ transform: translateX(-50%) translateY(-50%);
 }
 .cart-title{
 vertical-align : bottom;
+background-color: skyblue;
 text-align:center;
-background-color: rgba(42, 46, 49, 0.15);;
 box-shadow: 0 0.104vw 0.156vw 0 rgba(34, 36, 38, 0.15);
 height: 2.604vw;
 }
@@ -176,13 +177,37 @@ margin-left: 1.3vw;
 margin-right: 1.042vw;
 }
 .cart-search-text-body{
-position: absolute;
-top: 50%;
-left: 50.5%;
-transform: translate(31.5%, 10%);
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 16vh;
+    left: 53.5%;
 }
-.cart-search-child{
-border: 0.052vw solid black;
-width: 20vw;
-height: 1.563vw;
+.log-tag{
+    font-size: 1.563vw;
+    position: absolute;
+    left: 2%;
 }
+/* 07 12 18 최종 수정 */
+.wrapper {
+    position: absolute;
+    margin: -4.4vw 0.781vw -0.521vw 0;
+    padding: 1.563vw;
+  }
+  .circle {
+    border: 0.781vw solid #ffc107;
+    background-color: #ffc107;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.042vw;
+    height: 0.781vw;
+    width: 0.781vw;
+    display: flex;
+  }
+  
+   input[type="button"]{
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+    padding-top: 0.1vw;
+    padding-bottom: 0.1vw;
+   }
