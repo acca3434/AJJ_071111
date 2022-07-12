@@ -856,29 +856,49 @@ shopCap().then((cartUserShopInfor)=>{
 /* 220711 추가된 부분  */
 
 if(document.documentElement.scrollTop==0){
-  document.querySelector(".main-header").style.backgroundColor = "#ffffff00";
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
   document.querySelector(".search").style.visibility = "hidden";
+  document.querySelector(".logo").style.backgroundColor = "ffffff00";
+  document.querySelector(".Ann-shop").style.backgroundColor = "ffffff00";
+  document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
+  document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
+  document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
 }
 document.querySelector(".Ann-shop").addEventListener("click",function(){
-  document.querySelector(".main-header").style.backgroundColor = "white";
-  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.575)";
+  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
   document.querySelector(".search").style.visibility = "";
+  document.querySelector(".logo").style.backgroundColor = "white";
+  document.querySelector(".Ann-shop").style.backgroundColor = "white";
+  document.querySelector(".Joo-shop").style.backgroundColor = "white";
+  document.querySelector(".Jang-shop").style.backgroundColor = "white";
+  document.querySelector(".search-rank").style.backgroundColor = "white";
 })
 document.querySelector(".Joo-shop").addEventListener("click",function(){
-  document.querySelector(".main-header").style.backgroundColor = "white";
-  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.575)";
+  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
   document.querySelector(".search").style.visibility = "";
+  document.querySelector(".logo").style.backgroundColor = "white";
+  document.querySelector(".Ann-shop").style.backgroundColor = "white";
+  document.querySelector(".Joo-shop").style.backgroundColor = "white";
+  document.querySelector(".Jang-shop").style.backgroundColor = "white";
+  document.querySelector(".search-rank").style.backgroundColor = "white";
 })
 document.querySelector(".Jang-shop").addEventListener("click",function(){
-  document.querySelector(".main-header").style.backgroundColor = "white";
-  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.575)";
+  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
   document.querySelector(".search").style.visibility = "";
+  document.querySelector(".logo").style.backgroundColor = "white";
+  document.querySelector(".Ann-shop").style.backgroundColor = "white";
+  document.querySelector(".Joo-shop").style.backgroundColor = "white";
+  document.querySelector(".Jang-shop").style.backgroundColor = "white";
+  document.querySelector(".search-rank").style.backgroundColor = "white";
 })
 document.querySelector(".top-icon").addEventListener("click",function(){
-  document.querySelector(".main-header").style.backgroundColor = "#ffffff00";
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
   document.querySelector(".search").style.visibility = "hidden";
+  document.querySelector(".logo").style.backgroundColor = "ffffff00";
+  document.querySelector(".Ann-shop").style.backgroundColor = "ffffff00";
+  document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
+  document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
+  document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
 })
 
 

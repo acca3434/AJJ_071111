@@ -370,7 +370,7 @@
             "designName" : "jjw"       
         },
         {
-            "name" : "통풍이 잘 안됄거같은 회색 바지",
+            "name" : "통풍이 잘 안될거같은 회색 바지",
             "price" : 12500,
             "img" : "url('/image/f41.jpg')",
             "popular" : "normal",
@@ -415,7 +415,7 @@
             "designName" : "jjw"
         },
         {
-            "name" : "통풍이 진짜 잘됄거같은 누리끼리 바지",
+            "name" : "통풍이 진짜 잘될거같은 누리끼리 바지",
             "price" : 11000,
             "img" : "url('/image/f46.jpg')",
             "popular" : "normal",
@@ -730,7 +730,7 @@
             "designName" : "ajy"       
         },
         {
-            "name" : "통풍이 잘 안됄거같은 회색 바지",
+            "name" : "통풍이 잘 안될거같은 회색 바지",
             "price" : 12500,
             "img" : "url('/image/f81.jpg')",
             "popular" : "normal",
@@ -775,7 +775,7 @@
             "designName" : "ajy"
         },
         {
-            "name" : "통풍이 진짜 잘됄거같은 누리끼리 바지",
+            "name" : "통풍이 진짜 잘될거같은 누리끼리 바지",
             "price" : 11000,
             "img" : "url('/image/f86.jpg')",
             "popular" : "normal",
