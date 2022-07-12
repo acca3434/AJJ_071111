@@ -352,7 +352,7 @@ body {
   width: initial;
 }
 .label {
-  background: url(images/tag-fill.svg) no-repeat left bottom;
+  background: url("/img_AJJ/tag-fill.svg") no-repeat left bottom;
   padding-left: 40px;
   font-weight: 900;
   font-size: 20px;
@@ -440,6 +440,7 @@ li {
 }
 
 [class *="-img"] {
+  background-size:cover;
   background-color: skyblue;
   justify-content: center;
   align-items: center;

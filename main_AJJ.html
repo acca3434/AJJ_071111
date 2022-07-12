@@ -202,6 +202,9 @@
     <section class="section2">
       <div class="Ahn-slide-container">
         <ul class="Ahn-slide-wrap">
+          <li class="Ahn-img0">
+            <span class="page-number"></span>
+          </li>
           <li class="Ahn-img1">
             <span class="page-number"></span>
           </li>
@@ -596,9 +599,6 @@
           <li class="Jang-img39">
             <span class="page-number"></span>
           </li>
-          <li class="Jang-img40">
-            <span class="page-number"></span>
-          </li>
         </ul>
         <li class="Jang-prev-btn">이전</li>
         <li class="Jang-next-btn">다음</li>
@@ -639,4 +639,18 @@ let logTag;
 </script>
 <script src="/JS/cartShopCap2.js"></script>
 
+
+<script>
+  let ajyInfor;
+  shopCap().then((cartUserShopInfor)=>{
+    ajyInfor = cartUserShopInfor.filter((a)=>{
+      return a.designName=="ajy"
+    })
+    for (let imgIndex = 0; imgIndex < ajyInfor.length; imgIndex++) {
+    document.querySelector(".Ahn-img"+[imgIndex]).style.backgroundImage = ajyInfor[imgIndex].img
+   }
+  })
+  
+
+</script>
 </html>
