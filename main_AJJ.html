@@ -11,6 +11,20 @@
   <link rel="stylesheet" href="css_AJJ.css">
   <link rel="stylesheet" href="/CSS/cartShopCap.css">
 </head>
+<style>
+  .cart-name4{
+    margin: 15px;
+  }
+  .cart-name4::after{
+    content: "NEW!!";
+    font-size: x-small;
+    padding: 2px 4px;
+    margin: 0 10px;
+    border-radius: 2px;
+    background: #f00;
+    color:#fff;
+  }
+</style>
 <body>
   <header class="main-header">
     <div class="logo">
@@ -48,7 +62,7 @@
           </svg> 문의하기
           <div class="chat-box">
             <div class="chat-text"></div>
-            <div class="chat-robot">연락처 정보를 알려주시면 답변 알림을 보내드립니다.<br>※ 정확히 입력해주세요.
+            <div class="chat-robot">정보를 남겨주시면 잠시 후에 상담원이 연락 드릴 예정입니다.<br>※ 정확히 입력해주세요.
               <div>
                 이름
                 <div>
@@ -332,7 +346,7 @@
         <div class="cart-list" id="ajy-cart-list-body">
             <div class="cart-listRow" id="ajy-search-list-container"></div>
         </div>
-    </div>
+      </div>
 
     </section>
     <section class="section3">
@@ -610,7 +624,6 @@
   </div>
 </body>
 <script>
-
 let userShopAllInFor;
 let logTag;
 </script>
@@ -634,19 +647,15 @@ let logTag;
     // 07 12 18 최종 수정
 </script>
 <script src="/JS/cartShopCap2.js"></script>
-
-
 <script>
-  let ajyInfor;
-  shopCap().then((cartUserShopInfor)=>{
-    ajyInfor = cartUserShopInfor.filter((a)=>{
-      return a.designName=="ajy"
-    })
-    for (let imgIndex = 0; imgIndex < ajyInfor.length; imgIndex++) {
-    document.querySelector(".Ahn-img"+[imgIndex]).style.backgroundImage = ajyInfor[imgIndex].img
-   }
-  })
-  
-
+//   let ajyInfor;
+//   shopCap().then((cartUserShopInfor)=>{
+//     ajyInfor = cartUserShopInfor.filter((a)=>{
+//       return a.designName=="ajy"
+//     })
+//     for (let imgIndex = 0; imgIndex < ajyInfor.length; imgIndex++) {
+//     document.querySelector(".Ahn-img"+[imgIndex]).style.backgroundImage = ajyInfor[imgIndex].img
+//    }
+// })
 </script>
 </html>

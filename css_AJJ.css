@@ -43,7 +43,7 @@ body {
   text-align: center;
   color: royalblue;
   padding-top: 2vw;
-  width: 19.4vw;
+  width: 19.7vw;
 }
 
 [class^="section"] {
@@ -190,14 +190,14 @@ body {
 }
 
 .chat-text{
-  position: relative;
-  max-width: 300px;
-  left: 0;
+  background-color: white;
   margin-bottom: 10.003px;
   padding: 0px 10.003px;
-  background-color: white;
   border-radius: 30px;
+  position: relative;
   text-align: left;
+  max-width: 300px;
+  left: 0;
 }
 
 .chat-robot {
@@ -222,8 +222,8 @@ body {
 
 .chat-other {
   background-color: aliceblue;
-  position: absolute;
   border-radius: 30px;
+  position: absolute;
   bottom: 20px;
   height: 50px;
   width: 100%;
@@ -232,11 +232,17 @@ body {
 .chat-input {
   border-radius: 10px;
   position: absolute;
+  padding-left: 1vw;
   margin-top: 13px;
+  color: white;
   outline: none;
   border: none;
   width: 60%;
   left: 10px;
+}
+
+.chat-input::placeholder {
+  color: white;
 }
 
 .chat-other-icon {
@@ -259,7 +265,7 @@ body {
   align-items: center;
   display: flex;
   height: 10vh;
-  width: 20vw;
+  width: 19.7vw;
 }
 
 .logo:hover {
@@ -312,8 +318,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 41.667vw;
-  height: 41.667vw;
+  width: 60vw;
+  height: 700px;
   padding: 2.083vw;
   background-color: rgb(255, 255, 255);
   border-radius: 0.521vw;
@@ -323,65 +329,70 @@ body {
 .signup-delete{
   position: absolute;
   cursor: pointer;
-  right: 22px;
-  top: 22px;
+  right: 1.146vw;
+  top: 1.146vw;
 }
 
 .form {
-  margin: 10px auto;
-  width: 500px;
+  margin: 0.521vw auto;
+  width: 35vw;
   position: relative;
-  top: 30px;
+  top: 1.563vw;
   right: 0;
   z-index: 999;
 }
 
 .fieldset {
-  box-shadow: 10px 10px 10px 10px pink;
-  border: 3px solid palevioletred;
+  box-shadow: 0.521vw 0.521vw 0.521vw 0.521vw pink;
+  border: 0.156vw solid palevioletred;
   border-radius: 30px;
-  padding: 20px;
-  margin: 20px;
+  padding: 1.042vw;
+  margin: 1.042vw;
 }
 
 .legend {
   text-align: center;
   font-weight: 900;
-  font-size: 30px;
+  font-size: 1.563vw;
   float: initial;
   width: initial;
 }
 .label {
   background: url("/img_AJJ/tag-fill.svg") no-repeat left bottom;
-  padding-left: 40px;
+  padding-left: 2.083vw;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 1.042vw;
   display: block;
-  margin: 10px;
+  margin: 0.521vw;
   
 }
 
 [id ^="input"] {
-  font-size: 20px;
-  padding: 5px;
-  height: 30px;
+  font-size: 1.042vw;
+  padding: 0.26vw;
+  height: 1.5vw;
   width: 100%;
   background-color: white;
-  border: 1px solid palevioletred;
+  border: 0.052vw solid palevioletred;
+}
+
+#inputEmail, #inputPw {
+  width: 30vw;
+  margin-bottom: 1vw;
 }
 
 [id ^="input"]::placeholder {
-  font-size: 12px;
+  font-size: 0.8vw;
 }
 
 [id ^="input"].is-invalid {
-  outline: 1px solid red;
-  border: 1px solid red;
+  outline: 0.052vw solid red;
+  border: 0.052vw solid red;
 }
 
 [id ^="input"].is-valid {
-  outline: 1px solid palevioletred;
-  border: 1px solid palevioletred;
+  outline: 0.052vw solid palevioletred;
+  border: 0.052vw solid palevioletred;
 }
 
 .disallow-massage {
@@ -391,7 +402,7 @@ body {
 }
 
 .welcome-msg {
-  margin: 20px 0px 0px 0px;
+  margin: 1.042vw 0px 0px 0px;
   text-align: center;
   font-weight: 900;
   color: red;
@@ -399,10 +410,10 @@ body {
 
 .submit-btn {
   background-color: palevioletred;
-  border: 3px solid palevioletred;
-  margin: 20px auto 10px auto;
+  border: 0.156vw solid palevioletred;
+  margin: 1.042vw auto 0.521vw auto;
   border-radius: 30px;
-  padding: 5px 10px;
+  padding: 0.26vw 0.521vw;
   font-weight: 900;
   color: white;
   display: block;
@@ -422,7 +433,7 @@ body {
   overflow: hidden;
   margin: 0 auto;
   display: flex;
-  top: 16vh;
+  top: 17vh;
 }
 
 [class $="-slide-wrap"] {
@@ -493,7 +504,7 @@ li {
   position: relative;
   height: 0.5vh;
   width: 0;
-  top: 16vh;
+  top: 17vh;
 }
 /* 로그인 css 추가 */
 .modal {
@@ -510,9 +521,13 @@ li {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 41.667vw;
-  height: 41.667vw;
+  width: 60vw;
+  height: 80vh;
   padding: 2.083vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background-color: rgb(255, 255, 255);
   border-radius: 0.521vw;
@@ -524,16 +539,20 @@ li {
   vertical-align : bottom;
   text-align:center;
   background-color: pink;
+  font-size: 5vw;
   box-shadow: 0 0.104vw 0.156vw 0 rgba(34, 36, 38, 0.15);
-  height: 2.604vw;
+  height: 8vw;
+  width: 30vw;
+  margin-bottom: 10vh;;
 }
-.btn_group{
+.btn_group {
   margin-top: 1.042vw;
 }
 
 .btn_group > input[type = "button"] {
   background-color: pink;
-  border: 1px solid palevioletred
+  border: 1px solid palevioletred;
+  margin: 0.1vw;
 }
 
 /* numberAnimation_AJJ */

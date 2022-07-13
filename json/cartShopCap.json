@@ -13,7 +13,7 @@
             "name" : "어디서 얻어온지 모르는 바지",
             "price" : 20000,
             "img" : "url('/image/f1.jpg')",
-            "popular" : "hit",
+            "popular" : "Donation",
             "index" : 1,
             "classification" : "pants",
             "designName" : "jbh"
