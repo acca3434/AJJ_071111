@@ -64,6 +64,22 @@ let cartBuyDeleteBtn = new Array();
 let cartBuyBtnShowList = new Array();
 let cartListPText = new Array();
 
+function resetArray() {
+   //배열 초기화
+   cartListCol = new Array();
+   cartContainer = new Array();
+   cartPicture = new Array();
+   cartFirstText = new Array();
+   cartPicHover = new Array();
+   cartBody = new Array();
+   cartName = new Array();
+   cartSecondText = new Array();
+   cartBtnContainer = new Array();
+   cartBtnGroup = new Array();
+   cartBtnGetList = new Array();
+   cartBtnShowList = new Array();
+}
+
 //검색을 위한 input값 넣어주기
 let cartSearchText = document.getElementById("cartSearchText").value;
 
@@ -121,19 +137,7 @@ document.querySelector(".wrapper").style.visibility = "hidden"
 
   function cartInput(cartUserShopInfor){
 
-    //배열 초기화
-    cartListCol = new Array();
-    cartContainer = new Array();
-    cartPicture = new Array();
-    cartFirstText = new Array();
-    cartPicHover = new Array();
-    cartBody = new Array();
-    cartName = new Array();
-    cartSecondText = new Array();
-    cartBtnContainer = new Array();
-    cartBtnGroup = new Array();
-    cartBtnGetList = new Array();
-    cartBtnShowList = new Array();
+    resetArray();
 
     for (const key in cartUserShopInfor) {
     cartListCol[key] = document.createElement("div");
@@ -249,7 +253,6 @@ document.querySelector(".wrapper").style.visibility = "hidden"
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJbh(jbhcartUserShopInfor) {
   while (cartCurrentListCountjbh < cartListCol.length) {
-    console.log("들어오냐?1");
     let cartListIndex = cartCurrentListCountjbh;
      document.getElementById("cartSearchListContainer").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -276,18 +279,16 @@ function cartListAppendJbh(jbhcartUserShopInfor) {
 //초기 상품목록 더보기 버튼을 눌렀을때
 cartMoreShowBtnjbh.addEventListener("click",function(){
   cartShowListCountjbh += 20;
-  cartListAppendJbh();
+  cartInput(jbhcartUserShopInfor)
+  cartListAppendJbh(jbhcartUserShopInfor);
 if(cartShowListCountjbh==cartListCol.length){
   cartMoreShowBtnjbh.remove();
   }
 })
 
-
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJjw(jjwcartUserShopInfor) {
   while (cartCurrentListCountjjw < cartListCol.length) {
-    console.log("들어오냐?2");
-
     let cartListIndex = cartCurrentListCountjjw;
      document.getElementById("jjw-search-list-container").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -314,7 +315,8 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
 //초기 상품목록 더보기 버튼을 눌렀을때
 cartMoreShowBtnjjw.addEventListener("click",function(){
   cartShowListCountjjw += 20;
-  cartListAppendJjw();
+  cartInput(jjwcartUserShopInfor);
+  cartListAppendJjw(jjwcartUserShopInfor);
   //80개가 다 됐을때 더보기 버튼 삭제
 if(cartShowListCountjjw==cartListCol.length){
   cartMoreShowBtnjjw.remove();
@@ -324,8 +326,6 @@ if(cartShowListCountjjw==cartListCol.length){
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendAjy(ajycartUserShopInfor) {
   while (cartCurrentListCountajy < cartListCol.length) {
-    console.log("들어오냐?3");
-
     let cartListIndex = cartCurrentListCountajy;
      document.getElementById("ajy-search-list-container").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -353,7 +353,8 @@ function cartListAppendAjy(ajycartUserShopInfor) {
 //초기 상품목록 더보기 버튼을 눌렀을때
 cartMoreShowBtnajy.addEventListener("click",function(){
   cartShowListCountajy += 20;
-  cartListAppendAjy();
+  cartInput(ajycartUserShopInfor)
+  cartListAppendAjy(ajycartUserShopInfor);
   //80개가 다 됐을때 더보기 버튼 삭제
 if(cartShowListCountajy==cartListCol.length){
   cartMoreShowBtnajy.remove();
@@ -825,6 +826,18 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
 
 shopCap().then((cartUserShopInfor)=>{
 
+  ajycartUserShopInfor =  cartUserShopInfor.filter((a)=>{
+    return a.designName == "ajy"
+  })
+  cartInput(ajycartUserShopInfor);
+  cartListAppendAjy(ajycartUserShopInfor);
+
+  cartUserShopInfor=0;
+
+})
+
+shopCap().then((cartUserShopInfor)=>{
+
   jbhcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
     return a.designName == "jbh"
   })
@@ -843,18 +856,6 @@ shopCap().then((cartUserShopInfor)=>{
   cartListAppendJjw(jjwcartUserShopInfor);
 
   cartUserShopInfor=0;
-})
-
-shopCap().then((cartUserShopInfor)=>{
-
-  ajycartUserShopInfor =  cartUserShopInfor.filter((a)=>{
-    return a.designName == "ajy"
-  })
-  cartInput(ajycartUserShopInfor);
-  cartListAppendAjy(ajycartUserShopInfor);
-
-  cartUserShopInfor=0;
-
 })
 
 /* 220711 추가된 부분  */
