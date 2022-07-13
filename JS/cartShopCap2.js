@@ -302,6 +302,7 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
      cartPicture[cartListIndex].after(cartBody[cartListIndex]);
      cartBody[cartListIndex].appendChild(cartName[cartListIndex]);
      cartName[cartListIndex].after(cartSecondText[cartListIndex]);
+    //  cartName[cartListIndex].classList.add("NewBtn");
      cartSecondText[cartListIndex].after(cartBtnContainer[cartListIndex]);
      cartBtnContainer[cartListIndex].appendChild(cartBtnGroup[cartListIndex]);
      cartBtnGroup[cartListIndex].appendChild(cartBtnGetList[cartListIndex]);
