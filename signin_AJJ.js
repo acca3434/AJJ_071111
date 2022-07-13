@@ -12,7 +12,7 @@ modal.style.display = 'block';
 
 
 function loadJson() {
-return fetch("loginMain.json")
+return fetch("/json/loginMain.json")
     .then((res) => res.json())
     .then((json) => json.user)
     .catch((rej) => {
@@ -52,8 +52,13 @@ userInfor = {
                     } else if (user[key].email == userInfor.userInputEmail && user[key].pw != userInfor.userInputPw) {
                         alert("패스워드가 맞지 않습니다!")
                         break;
-                    } else if (user[key].email == userInfor.userInputEmail && user[key].pw == userInfor.userInputPw) {
+                    } else if (user[key].email == userInfor.userInputEmail && user[key].pw == userInfor.userInputPw) { 
                         alert(user[key].name + " 환영합니다!");
+                        modal.style.display = 'none';
+                        let signInText = document.createElement("p");
+                        signInText.classList.add("sign-in-text")
+                        signInText.innerHTML = user[key].name +" 님 환영합니다";
+                        document.querySelector(".search").appendChild(signInText);
                         break;
                     }
                 }

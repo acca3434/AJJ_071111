@@ -132,6 +132,9 @@ let cartAllList = document.getElementById("cartAllList");
 
   //220711 추가된 부분
 
+  //071311 추가된 부분
+  let jjwFirstInforText = document.createElement("span");
+
 let cartNumberCount = 0;
 document.querySelector(".wrapper").style.visibility = "hidden"
 
@@ -142,6 +145,7 @@ document.querySelector(".wrapper").style.visibility = "hidden"
     for (const key in cartUserShopInfor) {
     cartListCol[key] = document.createElement("div");
     cartListCol[key].classList.add("cart-listCol");
+
     
     cartContainer[key] = document.createElement("div");
     cartContainer[key].classList.add("cart-container");
@@ -304,6 +308,12 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
      cartBtnGetList[cartListIndex].after(cartBtnShowList[cartListIndex]);
      cartCurrentListCountjjw++
      if(cartCurrentListCountjjw==cartShowListCountjjw){
+      jjwFirstInforText.classList.add("jjw-first-infor-text")
+      jjwFirstInforText.innerHTML = "1차 커뮤니티 상품은<br>'유일하게 개발된 타임머신'<br><br>기부 상품은 댓글과 좋아요로 자유롭게 소통할 수 있는 커뮤니티 공간이며 해당 상품의 판매 수익은 전액 기부됩니다.";
+      cartPicture[0].style.position = "relative";
+      cartPicture[0].style.backgroundColor = "skyblue";
+      cartPicture[0].style.backgroundImage = "";
+      cartFirstText[0].after(jjwFirstInforText);
       document.getElementById("jjw-search-list-container").after(cartMoreShowBtnjjw);
         break;
      }

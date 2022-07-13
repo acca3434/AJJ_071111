@@ -105,6 +105,7 @@ function shopCap(){
       for (const key in cartUserShopInfor) {
       cartListCol[key] = document.createElement("div");
       cartListCol[key].classList.add("cart-listCol");
+      cartListCol[key].id = "cartListCol"+[key]
       
       cartContainer[key] = document.createElement("div");
       cartContainer[key].classList.add("cart-container");
