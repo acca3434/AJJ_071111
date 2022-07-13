@@ -648,14 +648,14 @@ let logTag;
 </script>
 <script src="/JS/cartShopCap2.js"></script>
 <script>
-//   let ajyInfor;
-//   shopCap().then((cartUserShopInfor)=>{
-//     ajyInfor = cartUserShopInfor.filter((a)=>{
-//       return a.designName=="ajy"
-//     })
-//     for (let imgIndex = 0; imgIndex < ajyInfor.length; imgIndex++) {
-//     document.querySelector(".Ahn-img"+[imgIndex]).style.backgroundImage = ajyInfor[imgIndex].img
-//    }
-// })
+  let ajyInfor;
+  shopCap().then((cartUserShopInfor)=>{
+    ajyInfor = cartUserShopInfor.filter((a)=>{
+      return a.designName=="ajy"
+    })
+    for (let imgIndex = 0; imgIndex < ajyInfor.length; imgIndex++) {
+    document.querySelector(".Ahn-img"+[imgIndex]).style.backgroundImage = ajyInfor[imgIndex].img
+   }
+})
 </script>
 </html>

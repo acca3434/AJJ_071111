@@ -174,6 +174,10 @@ document.querySelector(".wrapper").style.visibility = "hidden"
     cartBtnGetList[key].setAttribute("type","button");
     cartBtnGetList[key].setAttribute("value","장바구니에 담기");
     cartBtnGetList[key].style.margin = "0.3vw";
+    cartBtnGetList[key].style.paddingTop = "0.1vw";
+    cartBtnGetList[key].style.paddingBottom = "0.1vw";
+    cartBtnGetList[key].style.paddingLeft = "0.3vw";
+    cartBtnGetList[key].style.paddingRight = "0.3vw";
     cartBtnGetList[key].classList.add("cart-btn");
     cartBtnGetList[key].id = "cartBtnGetList"+[key];
     
@@ -181,12 +185,16 @@ document.querySelector(".wrapper").style.visibility = "hidden"
     cartBtnShowList[key].setAttribute("type","button");
     cartBtnShowList[key].setAttribute("value","상품 보기");
     cartBtnShowList[key].style.margin = "0.3vw";
+    cartBtnShowList[key].style.paddingTop = "0.1vw";
+    cartBtnShowList[key].style.paddingBottom = "0.1vw";
+    cartBtnShowList[key].style.paddingLeft = "0.3vw";
+    cartBtnShowList[key].style.paddingRight = "0.3vw";
     cartBtnShowList[key].classList.add("cart-btn");
     cartBtnShowList[key].id = "cartBtnShowList"+[key];
 
         //각각의 장바구니 버튼을 눌렀을때
-      cartBtnGetList[key].addEventListener("click",function(){
-
+      cartBtnGetList[key].addEventListener("click",function(){ 
+        
         if(cartNumberCount==0){
           document.querySelector(".wrapper").style.visibility = "";
         }
@@ -252,6 +260,7 @@ document.querySelector(".wrapper").style.visibility = "hidden"
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJbh(jbhcartUserShopInfor) {
   while (cartCurrentListCountjbh < cartListCol.length) {
+    console.log("들어오냐?1");
     let cartListIndex = cartCurrentListCountjbh;
      document.getElementById("cartSearchListContainer").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -288,6 +297,8 @@ if(cartShowListCountjbh==cartListCol.length){
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJjw(jjwcartUserShopInfor) {
   while (cartCurrentListCountjjw < cartListCol.length) {
+    console.log("들어오냐?2");
+
     let cartListIndex = cartCurrentListCountjjw;
      document.getElementById("jjw-search-list-container").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -324,6 +335,8 @@ if(cartShowListCountjjw==cartListCol.length){
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendAjy(ajycartUserShopInfor) {
   while (cartCurrentListCountajy < cartListCol.length) {
+    console.log("들어오냐?3");
+
     let cartListIndex = cartCurrentListCountajy;
      document.getElementById("ajy-search-list-container").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -812,9 +825,6 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
     cartNewProductInfor=0;
 })
 
-
-
-
 shopCap().then((cartUserShopInfor)=>{
 
   jbhcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
@@ -849,7 +859,6 @@ shopCap().then((cartUserShopInfor)=>{
 
 })
 
-
 if(document.documentElement.scrollTop==0){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
   document.querySelector(".search").style.visibility = "hidden";
@@ -869,6 +878,7 @@ document.querySelector(".Ann-shop").addEventListener("click",function(){
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
   document.querySelector(".search-rank").style.backgroundColor = "white";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
+
 })
 document.querySelector(".Joo-shop").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
@@ -879,6 +889,7 @@ document.querySelector(".Joo-shop").addEventListener("click",function(){
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
   document.querySelector(".search-rank").style.backgroundColor = "white";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
+
 })
 document.querySelector(".Jang-shop").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
@@ -889,6 +900,7 @@ document.querySelector(".Jang-shop").addEventListener("click",function(){
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
   document.querySelector(".search-rank").style.backgroundColor = "white";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
+
 })
 document.querySelector(".top-icon").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
@@ -899,6 +911,7 @@ document.querySelector(".top-icon").addEventListener("click",function(){
   document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
   document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
+
 })
 document.querySelector(".logo").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
