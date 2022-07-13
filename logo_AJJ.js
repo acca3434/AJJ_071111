@@ -9,7 +9,7 @@ class logo {
         this._setInterval = setInterval(() => { this.typingEvent(); }, 1000);
     }
     typingEvent() {
-        const _this = this;
+        let _this = this;
         // 한 사람의 글자를 모두 처리해줬는지
         if (_this.members[_this.arrIdx].length > _this.textIdx) {
             _this.typingTextTag.innerHTML += _this.members[_this.arrIdx][_this.textIdx];
@@ -40,7 +40,7 @@ class logo {
     }
     // 기존 텍스트를 가져와서 한 글자를 지운 다음 다시 넣어주는 함수
     removeEvent() {
-        const _this = this;
+        let _this = this;
         let currentText = _this.typingTextTag.innerHTML.split("");
         currentText.pop();
         currentText = currentText.join("");
@@ -48,10 +48,10 @@ class logo {
     }
     // 기존 텍스트를 강조하는 클래스 태그로 넣어주는 함수
     accentText() {
-        const _this = this;
+        let _this = this;
         _this.accentTextTag.innerHTML += _this.typingTextTag.innerHTML;
         _this.typingTextTag.innerHTML = "";
     }
 }
 
-// 07 12 18 최종 수정
+// 07 07 16 최종 수정

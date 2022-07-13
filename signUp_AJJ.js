@@ -14,7 +14,7 @@ class signUp {
         this.init();
     }
     init() {
-        const _this = this;
+        let _this = this;
         _this.signupModal.style.display = "none";
         _this.signupIcon.addEventListener("click", function () {
             _this.signupModal.style.display = "block";
@@ -77,7 +77,7 @@ class signUp {
     }
     // 유효성이 허용되지 않았을 때 메세지를 보여주는 함수
     disallowEvent(el, idx) {
-        const _this = this;
+        let _this = this;
         // nextElementSibling 다음 형제 태그
         if (!el.nextElementSibling.classList.contains("disallow-massage")) {
             const smallTag = document.createElement("small");
@@ -88,7 +88,7 @@ class signUp {
     }
     // 모든 input의 유효성 검증의 통과 여부를 배열에 담는 함수
     regRslt() {
-        const _this = this;
+        let _this = this;
         let rsltArr = [];
         _this.inputTags.forEach((el, idx) => {
             rsltArr.push(_this.regs[idx].test(el.value));
@@ -97,4 +97,4 @@ class signUp {
     }
 }
 
-// 07 12 18 최종 수정
+// 07 11 12 최종 수정

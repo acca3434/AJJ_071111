@@ -7,6 +7,7 @@ function shopCap(){
     console.log("실패")
   })
 }
+<<<<<<< HEAD
 //주병현 숖 홈페이지
 let jbhcartUserShopInfor;
 //장지원 숖 홈페이지
@@ -14,6 +15,8 @@ let jjwcartUserShopInfor;
 //안주영 숖 홈페이지
 let ajycartUserShopInfor;
 
+=======
+>>>>>>> parent of ce85efe (css fixed and add today cap)
 //주병현 더보기 숫자 카운트
 let cartCurrentListCountjbh = 0;
 let cartShowListCountjbh = 20;
@@ -24,9 +27,21 @@ let cartShowListCountjjw = 20;
 let cartCurrentListCountajy = 0;
 let cartShowListCountajy = 20;
 
+<<<<<<< HEAD
 //새상품순에 담을 json배열
 //새상품순을 눌렀을때
 let cartNewProductInfor;
+=======
+
+//주병현 숖 홈페이지
+let jbhcartUserShopInfor;
+//장지원 숖 홈페이지
+let jjwcartUserShopInfor;
+//안주영 숖 홈페이지
+let ajycartUserShopInfor;
+
+
+>>>>>>> parent of ce85efe (css fixed and add today cap)
 //쇼핑몰 목록 전체 태그 배열
 let cartListCol = new Array();
 let cartContainer = new Array();
@@ -173,22 +188,11 @@ document.querySelector(".wrapper").style.visibility = "hidden"
     cartBtnGetList[key] = document.createElement("input");
     cartBtnGetList[key].setAttribute("type","button");
     cartBtnGetList[key].setAttribute("value","장바구니에 담기");
-    cartBtnGetList[key].style.margin = "0.3vw";
-    cartBtnGetList[key].style.paddingTop = "0.1vw";
-    cartBtnGetList[key].style.paddingBottom = "0.1vw";
-    cartBtnGetList[key].style.paddingLeft = "0.3vw";
-    cartBtnGetList[key].style.paddingRight = "0.3vw";
     cartBtnGetList[key].classList.add("cart-btn");
     cartBtnGetList[key].id = "cartBtnGetList"+[key];
-    
     cartBtnShowList[key] = document.createElement("input");
     cartBtnShowList[key].setAttribute("type","button");
     cartBtnShowList[key].setAttribute("value","상품 보기");
-    cartBtnShowList[key].style.margin = "0.3vw";
-    cartBtnShowList[key].style.paddingTop = "0.1vw";
-    cartBtnShowList[key].style.paddingBottom = "0.1vw";
-    cartBtnShowList[key].style.paddingLeft = "0.3vw";
-    cartBtnShowList[key].style.paddingRight = "0.3vw";
     cartBtnShowList[key].classList.add("cart-btn");
     cartBtnShowList[key].id = "cartBtnShowList"+[key];
 
@@ -370,7 +374,9 @@ if(cartShowListCountajy==cartListCol.length){
   cartMoreShowBtnajy.remove();
   }
 })
+
   //장바구니 버튼을 눌렀을때
+  
   document.querySelector(".shopping-icon").addEventListener("click",function(){
   
   cartModal.style.display = 'block';
@@ -410,9 +416,6 @@ if(cartShowListCountajy==cartListCol.length){
     document.querySelector(".cart-list-text").removeChild(document.getElementById("cartListPText"+[btnCartListIndex]));
     cartNumberCount--;
     document.querySelector(".circleNumber").innerHTML = cartNumberCount;
-    if(cartNumberCount==0){
-      document.querySelector(".wrapper").style.visibility = "hidden";
-    }
    })
 }
 cartBuyListRow.after(cartListSum)
@@ -505,6 +508,8 @@ document.getElementById("cartSearchBtn").addEventListener("click",function(){
     })
     cartUserSearchPriceInfor = 0;
 })
+
+
 
 //낮은 가격순 눌렀을때
 document.getElementById("cartRowSearchPrice").addEventListener("click",function(){
@@ -718,12 +723,21 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
         return a.designName == "ajy"
       })
     
-      if(cartSearchText=="빵" || cartSearchText=="포켓몬빵" || cartSearchText=="포켓몬" || cartSearchText=="푸키먼빵"|| cartSearchText=="돈지랄"|| cartSearchText=="bread"){
-        cartSearchText = "bread";
-      }
-      else if(cartSearchText=="피규어" || cartSearchText=="헬창"|| cartSearchText=="포켓몬헬창" || cartSearchText=="헬창피규어"|| cartSearchText=="figure"){
-        cartSearchText = "figure";
-      }
+        if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
+          cartSearchText = "pants";
+        }
+        else if(cartSearchText=="레깅스" || cartSearchText=="leggings"){
+          cartSearchText = "leggings";
+        }
+        else if(cartSearchText=="신발" || cartSearchText=="슈즈" || cartSearchText=="shoes"){
+          cartSearchText = "shoes";
+        }
+        else if(cartSearchText=="세트" || cartSearchText=="set"){
+          cartSearchText = "set";
+        }
+        else if(cartSearchText=="가방" || cartSearchText=="샤넬" || cartSearchText=="샤넬백" ||cartSearchText=="백" || cartSearchText=="bag"){
+          cartSearchText = "bag";
+        }
         else if(cartSearchText==""){
           cartInput(ajycartUserShopInfor);
           cartListAppendAjy(ajycartUserShopInfor);
@@ -744,7 +758,6 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
 
 //상품검색 입력란을 클릭했을때
 document.getElementById("cartSearchText").addEventListener("click",function(){
-  document.querySelector(".cart-search-text-body").style.visibility = "visible";
 
   document.querySelector(".cart-search-text-body").innerHTML = "최근검색어";
   while (cartSearchFirst < cartSearchTextLast.length) {
@@ -859,6 +872,8 @@ shopCap().then((cartUserShopInfor)=>{
 
 })
 
+/* 220711 추가된 부분  */
+
 if(document.documentElement.scrollTop==0){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
   document.querySelector(".search").style.visibility = "hidden";
@@ -867,40 +882,33 @@ if(document.documentElement.scrollTop==0){
   document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
   document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
   document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
-  document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 }
 document.querySelector(".Ann-shop").addEventListener("click",function(){
-  document.querySelector(".search").style.backgroundColor = "#ffffff00";
-  document.querySelector(".search").style.visibility = "visible";
+  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+  document.querySelector(".search").style.visibility = "";
   document.querySelector(".logo").style.backgroundColor = "white";
   document.querySelector(".Ann-shop").style.backgroundColor = "white";
   document.querySelector(".Joo-shop").style.backgroundColor = "white";
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
   document.querySelector(".search-rank").style.backgroundColor = "white";
-  document.querySelector(".cart-search-text-body").style.visibility = "hidden";
-
 })
 document.querySelector(".Joo-shop").addEventListener("click",function(){
-  document.querySelector(".search").style.backgroundColor = "#ffffff00";
-  document.querySelector(".search").style.visibility = "visible";
+  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+  document.querySelector(".search").style.visibility = "";
   document.querySelector(".logo").style.backgroundColor = "white";
   document.querySelector(".Ann-shop").style.backgroundColor = "white";
   document.querySelector(".Joo-shop").style.backgroundColor = "white";
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
   document.querySelector(".search-rank").style.backgroundColor = "white";
-  document.querySelector(".cart-search-text-body").style.visibility = "hidden";
-
 })
 document.querySelector(".Jang-shop").addEventListener("click",function(){
-  document.querySelector(".search").style.backgroundColor = "#ffffff00";
-  document.querySelector(".search").style.visibility = "visible";
+  document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+  document.querySelector(".search").style.visibility = "";
   document.querySelector(".logo").style.backgroundColor = "white";
   document.querySelector(".Ann-shop").style.backgroundColor = "white";
   document.querySelector(".Joo-shop").style.backgroundColor = "white";
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
   document.querySelector(".search-rank").style.backgroundColor = "white";
-  document.querySelector(".cart-search-text-body").style.visibility = "hidden";
-
 })
 document.querySelector(".top-icon").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
@@ -910,6 +918,7 @@ document.querySelector(".top-icon").addEventListener("click",function(){
   document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
   document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
   document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
+<<<<<<< HEAD
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 
 })
@@ -923,3 +932,8 @@ document.querySelector(".logo").addEventListener("click",function(){
   document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 })
+=======
+})
+
+
+>>>>>>> parent of ce85efe (css fixed and add today cap)

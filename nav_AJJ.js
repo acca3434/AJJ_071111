@@ -11,7 +11,6 @@ class mainNav {
         this.sectionTags = document.querySelectorAll('[class ^="section"]');
         this.navChildTags = document.querySelectorAll('[class $="shop"]');
         this.mainHeaderTag = document.querySelector('.main-header');
-        this.logoTag = document.querySelector('.logo');
         this.searchTag = document.createElement('div');
         this.doNotClick = false;
         this.resizeControl = null;
@@ -45,7 +44,7 @@ class mainNav {
         this.init();
     }
     init() {
-        const _this = this;
+        let _this = this;
         //챗봇박스는 일단 먼저 꺼둔다.
         _this.chatBotTag.style.display = "none";
         //transition에 property(속성)를 넣으면 그 property(속성)에만 적용가능하다.
@@ -58,7 +57,7 @@ class mainNav {
 
         //제출버튼 클릭시 버튼색 바뀜
         _this.subMission.addEventListener("click", function () {
-            let random = Math.floor(Math.random() * _this.colors.length)
+            let random = Math.floor(Math.random() * 6)
             _this.subMission.style.background = _this.colors[random];
         })
 
@@ -125,14 +124,6 @@ class mainNav {
             _this.remoconOff();
         })
 
-        // ㅜ 로고 버튼을 클릭했을 때 메인 페이지로 이동
-        _this.logoTag.addEventListener("click", () => {
-            _this.searchTag.remove();
-            _this.allSectionsTag.style.top = `${0}vh`;
-            _this.remoconMove();
-            _this.remoconOff();
-        })
-
         // ㅜ 메뉴 버튼을 클릭했을 때 ㅡㅡㅡ navChildTags[0, 1, 2]
         _this.navChildTags.forEach((el, idx) => {
             el.onclick = () => {
@@ -161,10 +152,10 @@ class mainNav {
         // ㅜ 창이 resize 될 때 요동치는 버그 잡기 위해 트랜지션 제어하기
         _this.allSectionsTag.style.transition = "0.3s";
         window.addEventListener("resize", () => {
-            const _this = this;
+            let _this = this;
             clearTimeout(_this.resizeControl);
             _this.allSectionsTag.style.transition = "";
-
+            
             _this.resizeControl = setTimeout(() => {
                 _this.remoconReMove();
                 _this.allSectionsTag.style.transition = "0.3s";
@@ -174,7 +165,7 @@ class mainNav {
 
     //리모콘 투명도 조절 visibility = "visible"요소를 기본 값으로 설정, visibility = "hidden" 요소를 보여주진 않지만 할당된 공간은 존재
     remoconOff() {
-        const _this = this;
+        let _this = this;
         _this.remocon.classList.remove("remoconMoveOn");
         if (_this.remocon.style.opacity == "1") {
             _this.remocon.style.opacity = "0";
@@ -184,7 +175,7 @@ class mainNav {
 
     //리모컨 생성 및 위치 조절
     remoconMove() {
-        const _this = this;
+        let _this = this;
         if (!_this.remocon.classList.contains("remoconMoveOn")) {
             _this.remocon.classList.add("remoconMoveOn");
         }
@@ -193,11 +184,10 @@ class mainNav {
 
     //리사이징 되었을 때 리모컨 transition없애기
     remoconReMove() {
-        const _this = this;
+        let _this = this;
         _this.remocon.classList.remove("remoconMoveOn");
         _this.remocon.style.top = `${(_this.index) * 100 + 50}vh`;
     }
-
 }
 
-// 07 12 18 최종 수정
+// 07 11 10 최종 수정
