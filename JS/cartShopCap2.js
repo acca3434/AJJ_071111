@@ -135,8 +135,9 @@ let cartAllList = document.getElementById("cartAllList");
   //071311 추가된 부분
   let jjwFirstInforText = document.createElement("span");
 
-let cartNumberCount = 0;
-document.querySelector(".wrapper").style.visibility = "hidden"
+  let cartNumberCount = 0;
+  document.querySelector(".wrapper").style.visibility = "hidden"
+  document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 
   function cartInput(cartUserShopInfor){
 
@@ -146,7 +147,6 @@ document.querySelector(".wrapper").style.visibility = "hidden"
     cartListCol[key] = document.createElement("div");
     cartListCol[key].classList.add("cart-listCol");
 
-    
     cartContainer[key] = document.createElement("div");
     cartContainer[key].classList.add("cart-container");
     
@@ -302,7 +302,7 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
      cartPicture[cartListIndex].after(cartBody[cartListIndex]);
      cartBody[cartListIndex].appendChild(cartName[cartListIndex]);
      cartName[cartListIndex].after(cartSecondText[cartListIndex]);
-    //  cartName[cartListIndex].classList.add("NewBtn");
+     cartName[cartListIndex].classList.add("NewBtn");
      cartSecondText[cartListIndex].after(cartBtnContainer[cartListIndex]);
      cartBtnContainer[cartListIndex].appendChild(cartBtnGroup[cartListIndex]);
      cartBtnGroup[cartListIndex].appendChild(cartBtnGetList[cartListIndex]);
@@ -643,7 +643,12 @@ document.getElementById("cartSearchTextBtn").addEventListener("click",function()
     jbhcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
       return a.designName == "jbh"
     })
-      if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
+      if(cartSearchText==""){
+        cartInput(jbhcartUserShopInfor);
+        cartListAppendJbh(jbhcartUserShopInfor);
+        cartSearchText = alert("검색어를 입력해주세요!");
+      }
+      else if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
         cartSearchText = "pants";
       }
       else if(cartSearchText=="레깅스" || cartSearchText=="leggings"){
@@ -657,11 +662,6 @@ document.getElementById("cartSearchTextBtn").addEventListener("click",function()
       }
       else if(cartSearchText=="가방" || cartSearchText=="샤넬" || cartSearchText=="샤넬백" ||cartSearchText=="백" || cartSearchText=="bag"){
         cartSearchText = "bag";
-      }
-      else if(cartSearchText==""){
-        cartInput(jbhcartUserShopInfor);
-        cartListAppendJbh(jbhcartUserShopInfor);
-        cartSearchText = alert("검색어를 입력해주세요!");
       }
       cartUserShopInforSearch = jbhcartUserShopInfor.filter(function(data) {
         return data.classification===cartSearchText;
@@ -681,8 +681,12 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
     jjwcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
       return a.designName == "jjw"
     })
-  
-      if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
+      if(cartSearchText==""){
+        cartInput(jjwcartUserShopInfor);
+        cartListAppendJjw(jjwcartUserShopInfor);
+        cartSearchText = alert("검색어를 입력해주세요!");
+      }
+      else if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
         cartSearchText = "pants";
       }
       else if(cartSearchText=="레깅스" || cartSearchText=="leggings"){
@@ -696,11 +700,6 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
       }
       else if(cartSearchText=="가방" || cartSearchText=="샤넬" || cartSearchText=="샤넬백" ||cartSearchText=="백" || cartSearchText=="bag"){
         cartSearchText = "bag";
-      }
-      else if(cartSearchText==""){
-        cartInput(jjwcartUserShopInfor);
-        cartListAppendJjw(jjwcartUserShopInfor);
-        cartSearchText = alert("검색어를 입력해주세요!");
       }
       cartUserShopInforSearch = jjwcartUserShopInfor.filter(function(data) {
         return data.classification===cartSearchText;
@@ -719,8 +718,12 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
       ajycartUserShopInfor =  cartUserShopInfor.filter((a)=>{
         return a.designName == "ajy"
       })
-    
-        if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
+        if(cartSearchText==""){
+          cartInput(ajycartUserShopInfor);
+          cartListAppendAjy(ajycartUserShopInfor);
+          cartSearchText = alert("검색어를 입력해주세요!");
+        }
+        else if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
           cartSearchText = "pants";
         }
         else if(cartSearchText=="레깅스" || cartSearchText=="leggings"){
@@ -734,11 +737,6 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
         }
         else if(cartSearchText=="가방" || cartSearchText=="샤넬" || cartSearchText=="샤넬백" ||cartSearchText=="백" || cartSearchText=="bag"){
           cartSearchText = "bag";
-        }
-        else if(cartSearchText==""){
-          cartInput(ajycartUserShopInfor);
-          cartListAppendAjy(ajycartUserShopInfor);
-          cartSearchText = alert("검색어를 입력해주세요!");
         }
         cartUserShopInforSearch = ajycartUserShopInfor.filter(function(data) {
           return data.classification===cartSearchText;
@@ -780,7 +778,10 @@ document.getElementById("cartSearchText").addEventListener("focusout",function()
     document.querySelector(".cart-search-text-body").removeChild(document.querySelector(".cart-search-text-body").firstChild);
   }
 })
+document.getElementById("cartSearchText").addEventListener("click",function(){
+  document.querySelector(".cart-search-text-body").style.visibility = "visible";
 
+})
 
 document.getElementById("cartNewProduct").addEventListener("click",function(){
   cartCurrentListCountjbh = 0;
@@ -794,7 +795,7 @@ document.getElementById("cartNewProduct").addEventListener("click",function(){
   }
   shopCap().then((cartUserShopInfor)=>{
   jbhcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
-    return a.designName == "jbh"
+    return a.designName == "jbh";
   })
     cartNewProductInfor = jbhcartUserShopInfor.sort((a,b)=>{
       return b.index - a.index;
@@ -809,7 +810,7 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
 }
   shopCap().then((cartUserShopInfor)=>{
     jjwcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
-      return a.designName == "jjw"
+      return a.designName == "jjw";
     })
     cartNewProductInfor = jjwcartUserShopInfor.sort((a,b)=>{
       return b.index - a.index;
@@ -824,7 +825,7 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
   }
     shopCap().then((cartUserShopInfor)=>{
       ajycartUserShopInfor =  cartUserShopInfor.filter((a)=>{
-        return a.designName == "ajy"
+        return a.designName == "ajy";
       })
       cartNewProductInfor = ajycartUserShopInfor.sort((a,b)=>{
         return b.index - a.index;

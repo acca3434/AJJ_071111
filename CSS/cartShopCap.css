@@ -88,6 +88,7 @@ textarea {
 .cart-btn-group > input {
     margin-left: 0.3vw;
     margin-right: 0.3vw;
+    font-size: 1vw;
 }
 
 .cart-list {
@@ -132,6 +133,7 @@ textarea {
     padding: 0.521vw;
     border-radius: 0.50rem;
     width: 90%;
+    font-size: 1vw;
 }
 
 .cart-img {
@@ -145,13 +147,14 @@ textarea {
     margin-bottom: 1vh;
     width: 90%;
     height: 6vh;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden;
+    overflow: auto;
     text-overflow: ellipsis;
-    padding: 0.5vw;
+    -webkit-line-clamp: 3;
+    padding: 0.2vw;
+    font-size: 1vw;
 }
 
 .cart-btn-container {
@@ -234,13 +237,14 @@ textarea {
     margin-right: 0.5vw;
     font-size: 1vw;
     height: 3.5vh;
+    padding-left: 1vw;
 }
 
 .cart-search-text-body {
     background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     top: 16vh;
-    left: 56.5%;
+    left: 57vw;
 }
 
 .log-tag {
@@ -278,4 +282,24 @@ input[type="button"] {
     position: absolute;
     left: 2.8%;
     font-size: 1.563vw;
+  }    
+  .jjw-first-infor-text{
+    position: absolute;
+    bottom: 0vw;
+    color: white;
+    padding: 1vw;
+    font-size: 1.2vw;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .NewBtn::after{
+    content: "기부";
+    background-color: royalblue;
+    color:white;
+    margin: 0 10px;
+    border-radius: 2px;
+    width: 2vw;
+    height: 2vh;
+    font-size: 1vw;
   }
