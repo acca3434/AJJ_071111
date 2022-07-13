@@ -1,9 +1,15 @@
 /* main_AJJ.html */
 
+/* 07 12 18 최종 수정 부분 */
+@font-face {
+  font-family: "Lee";
+  src: url("font/LeeSeoyun.ttf");
+}
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Lee", "나눔고딕";/* 07 12 18 최종 수정 부분 */
 }
 
 html,
@@ -357,12 +363,8 @@ body {
   font-weight: 900;
   font-size: 1.042vw;
   display: block;
-<<<<<<< HEAD
   margin: 0.521vw;
   
-=======
-  margin: 10px;
->>>>>>> parent of ce85efe (css fixed and add today cap)
 }
 
 [id ^="input"] {
@@ -370,7 +372,6 @@ body {
   padding: 0.26vw;
   height: 1.5vw;
   width: 100%;
-<<<<<<< HEAD
   background-color: white;
   border: 0.052vw solid palevioletred;
 }
@@ -378,8 +379,6 @@ body {
 #inputEmail, #inputPw {
   width: 30vw;
   margin-bottom: 1vw;
-=======
->>>>>>> parent of ce85efe (css fixed and add today cap)
 }
 
 [id ^="input"]::placeholder {
@@ -534,16 +533,13 @@ li {
   border-radius: 0.521vw;
   box-shadow: 0 0.104vw 0.156vw 0 rgba(34, 36, 38, 0.15);
   transform: translateX(-50%) translateY(-50%);
+  border: 4px solid palevioletred;
 }
 .modal_title{
   vertical-align : bottom;
   text-align:center;
-<<<<<<< HEAD
   background-color: pink;
   font-size: 5vw;
-=======
-  background-color: rgba(42, 46, 49, 0.15);;
->>>>>>> parent of ce85efe (css fixed and add today cap)
   box-shadow: 0 0.104vw 0.156vw 0 rgba(34, 36, 38, 0.15);
   height: 8vw;
   width: 30vw;
@@ -552,7 +548,6 @@ li {
 .btn_group {
   margin-top: 1.042vw;
 }
-<<<<<<< HEAD
 
 .btn_group > input[type = "button"] {
   background-color: pink;
@@ -577,6 +572,3 @@ li {
 }
 
 /* 07 12 18 최종 수정 */
-=======
-/* 07 11 11 최종 수정 */
->>>>>>> parent of ce85efe (css fixed and add today cap)

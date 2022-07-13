@@ -7,7 +7,6 @@ function shopCap(){
     console.log("실패")
   })
 }
-<<<<<<< HEAD
 //주병현 숖 홈페이지
 let jbhcartUserShopInfor;
 //장지원 숖 홈페이지
@@ -15,8 +14,6 @@ let jjwcartUserShopInfor;
 //안주영 숖 홈페이지
 let ajycartUserShopInfor;
 
-=======
->>>>>>> parent of ce85efe (css fixed and add today cap)
 //주병현 더보기 숫자 카운트
 let cartCurrentListCountjbh = 0;
 let cartShowListCountjbh = 20;
@@ -27,21 +24,9 @@ let cartShowListCountjjw = 20;
 let cartCurrentListCountajy = 0;
 let cartShowListCountajy = 20;
 
-<<<<<<< HEAD
 //새상품순에 담을 json배열
 //새상품순을 눌렀을때
 let cartNewProductInfor;
-=======
-
-//주병현 숖 홈페이지
-let jbhcartUserShopInfor;
-//장지원 숖 홈페이지
-let jjwcartUserShopInfor;
-//안주영 숖 홈페이지
-let ajycartUserShopInfor;
-
-
->>>>>>> parent of ce85efe (css fixed and add today cap)
 //쇼핑몰 목록 전체 태그 배열
 let cartListCol = new Array();
 let cartContainer = new Array();
@@ -918,7 +903,6 @@ document.querySelector(".top-icon").addEventListener("click",function(){
   document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
   document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
   document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
-<<<<<<< HEAD
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 
 })
@@ -932,8 +916,3 @@ document.querySelector(".logo").addEventListener("click",function(){
   document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 })
-=======
-})
-
-
->>>>>>> parent of ce85efe (css fixed and add today cap)
