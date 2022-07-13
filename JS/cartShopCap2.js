@@ -454,6 +454,7 @@ document.getElementById("cartSearchBtn").addEventListener("click",function(){
     })
       cartInput(cartUserSearchPriceInfor);
       cartListAppendJbh(cartUserSearchPriceInfor);
+
   })
 
   cartUserSearchPriceInfor = 0;
@@ -505,8 +506,6 @@ document.getElementById("cartSearchBtn").addEventListener("click",function(){
     })
     cartUserSearchPriceInfor = 0;
 })
-
-
 
 //낮은 가격순 눌렀을때
 document.getElementById("cartRowSearchPrice").addEventListener("click",function(){
@@ -686,20 +685,14 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
         cartListAppendJjw(jjwcartUserShopInfor);
         cartSearchText = alert("검색어를 입력해주세요!");
       }
-      else if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
-        cartSearchText = "pants";
+      else if(cartSearchText=="musical" || cartSearchText=="뮤지컬" || cartSearchText=="연극" || cartSearchText=="연극뮤지컬"){
+        cartSearchText = "musical";
       }
-      else if(cartSearchText=="레깅스" || cartSearchText=="leggings"){
-        cartSearchText = "leggings";
+      else if(cartSearchText=="뮤직" || cartSearchText=="music"|| cartSearchText=="음악"|| cartSearchText=="꽃이여"){
+        cartSearchText = "music";
       }
-      else if(cartSearchText=="신발" || cartSearchText=="슈즈" || cartSearchText=="shoes"){
-        cartSearchText = "shoes";
-      }
-      else if(cartSearchText=="세트" || cartSearchText=="set"){
-        cartSearchText = "set";
-      }
-      else if(cartSearchText=="가방" || cartSearchText=="샤넬" || cartSearchText=="샤넬백" ||cartSearchText=="백" || cartSearchText=="bag"){
-        cartSearchText = "bag";
+      else if(cartSearchText=="classical music" || cartSearchText=="클래식뮤직" || cartSearchText=="클래식 뮤직"){
+        cartSearchText = "classical music";
       }
       cartUserShopInforSearch = jjwcartUserShopInfor.filter(function(data) {
         return data.classification===cartSearchText;
@@ -723,20 +716,11 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
           cartListAppendAjy(ajycartUserShopInfor);
           cartSearchText = alert("검색어를 입력해주세요!");
         }
-        else if(cartSearchText=="바지" || cartSearchText=="팬츠" || cartSearchText=="바지" || cartSearchText=="pants"){
-          cartSearchText = "pants";
+        else if(cartSearchText=="poketmonbread" || cartSearchText=="poketmon bread" || cartSearchText=="빵" || cartSearchText=="포켓몬빵" || cartSearchText=="푸키먼빵"|| cartSearchText=="bread"){
+          cartSearchText = "bread";
         }
-        else if(cartSearchText=="레깅스" || cartSearchText=="leggings"){
-          cartSearchText = "leggings";
-        }
-        else if(cartSearchText=="신발" || cartSearchText=="슈즈" || cartSearchText=="shoes"){
-          cartSearchText = "shoes";
-        }
-        else if(cartSearchText=="세트" || cartSearchText=="set"){
-          cartSearchText = "set";
-        }
-        else if(cartSearchText=="가방" || cartSearchText=="샤넬" || cartSearchText=="샤넬백" ||cartSearchText=="백" || cartSearchText=="bag"){
-          cartSearchText = "bag";
+        else if(cartSearchText=="피규어" || cartSearchText=="포켓몬피규어" || cartSearchText=="포켓몬 피규어" || cartSearchText=="포켓몬" || cartSearchText=="헬창" || cartSearchText=="포켓몬헬창" || cartSearchText=="포켓몬헬창피규어" ||cartSearchText=="figure"){
+          cartSearchText = "figure";
         }
         cartUserShopInforSearch = ajycartUserShopInfor.filter(function(data) {
           return data.classification===cartSearchText;
@@ -871,7 +855,6 @@ shopCap().then((cartUserShopInfor)=>{
 })
 
 /* 220711 추가된 부분  */
-
 if(document.documentElement.scrollTop==0){
   document.querySelector(".search").style.backgroundColor = "#ffffff00";
   document.querySelector(".search").style.visibility = "hidden";

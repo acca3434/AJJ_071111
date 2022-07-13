@@ -10,7 +10,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "어디서 얻어온지 모르는 바지",
+            "name" : "무신사 20주년 기념 베이직 바지",
             "price" : 20000,
             "img" : "url('/image/f1.jpg')",
             "popular" : "Donation",
@@ -19,7 +19,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "거지 바지 세트",
+            "name" : "아디다스 X 코오롱스포츠 콜라보 바지",
             "price" : 12900,
             "img" : "url('/image/f2.jpg')",
             "popular" : "normal",
@@ -28,7 +28,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "바지 상하의 세트",
+            "name" : "롱슬립 니퍼 구두",
             "price" : 10000,
             "img" : "url('/image/f3.jpg')",
             "popular" : "normal",
@@ -37,7 +37,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "초록색 바지",
+            "name" : "유니클로 런웨이 초록색 바지",
             "price" : 1000,
             "img" : "url('/image/f4.jpg')",
             "popular" : "hit",
@@ -46,7 +46,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "회색 바지",
+            "name" : "회색 밴딩 무신사 바지",
             "price" : 2000,
             "img" : "url('/image/f5.jpg')",
             "popular" : "hit",
@@ -55,7 +55,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "브라운색 바지",
+            "name" : "무신사 브라운색 바지",
             "price" : 3000,
             "img" : "url('/image/f6.jpg')",
             "popular" : "normal",
@@ -64,7 +64,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "초록색 바지",
+            "name" : "주머니를 뒤져보니 지갑이 없다....",
             "price" : 20000,
             "img" : "url('/image/f7.jpg')",
             "popular" : "normal",
@@ -73,7 +73,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "잠옷 바지",
+            "name" : "오리 캐릭터 잠옷 바지",
             "price" : 10000,
             "img" : "url('/image/f8.jpg')",
             "popular" : "normal",
@@ -91,7 +91,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "뒷모습만 보여주는 바지",
+            "name" : "이클립스 가성비 패션 바지",
             "price" : 10000,
             "img" : "url('/image/f10.jpg')",
             "popular" : "normal",
@@ -118,7 +118,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "허벅지 근육이 더 큰 사람들을 위한 바지",
+            "name" : "무신사 X 시그니처 클래스 바지",
             "price" : 56000,
             "img" : "url('/image/f13.jpg')",
             "popular" : "normal",
@@ -127,7 +127,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "통풍이 잘돼는 바지",
+            "name" : "울 와이드 레그 펜츠",
             "price" : 23000,
             "img" : "url('/image/f14.jpg')",
             "popular" : "hit",
@@ -145,7 +145,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "브라운색 바지",
+            "name" : "브라운색 버버리 와이드 업",
             "price" : 12500,
             "img" : "url('/image/f16.jpg')",
             "popular" : "normal",
@@ -154,7 +154,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "바지랑 뭔 이상한 띠 세트",
+            "name" : "버버리 바지와 벨트 세트",
             "price" : 30000,
             "img" : "url('/image/f17.jpg')",
             "popular" : "normal",
@@ -163,7 +163,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "늘어나는 바지",
+            "name" : "유니클로 기모바지 세트",
             "price" : 11000,
             "img" : "url('/image/f18.jpg')",
             "popular" : "normal",
@@ -172,7 +172,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "레깅스인가 뭔가 바지",
+            "name" : "레깅스",
             "price" : 12500,
             "img" : "url('/image/f19.jpg')",
             "popular" : "hit",
@@ -181,7 +181,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "수박바지",
+            "name" : "수박바지 잠옷",
             "price" : 15000,
             "img" : "url('/image/f20.jpg')",
             "popular" : "normal",
@@ -190,7 +190,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "흰색인가 회색 통 큰 반바지",
+            "name" : "흰색 통이 큰 반바지",
             "price" : 11000,
             "img" : "url('/image/f21.jpg')",
             "popular" : "hit",
@@ -199,7 +199,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "통이 큰 청바지",
+            "name" : "(폴햄)와이드 통 청바지",
             "price" : 30000,
             "img" : "url('/image/f22.jpg')",
             "popular" : "hit",
@@ -208,7 +208,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "옷을 잘 못입는 사람의 바지",
+            "name" : "패션 잇 아이템 바지",
             "price" : 15000,
             "img" : "url('/image/f23.jpg')",
             "popular" : "normal",
@@ -244,7 +244,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "왜인진 모르겠지만 손으로 늘어나게 만든바지",
+            "name" : "기모 브라운 무신사 바지",
             "price" : 11000,
             "img" : "url('/image/f27.jpg')",
             "popular" : "hit",
@@ -253,7 +253,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "첫번째로 손넣은 건방진 모델",
+            "name" : "다시 뒤져보아도 지갑이 없다....",
             "price" : 15000,
             "img" : "url('/image/f28.jpg')",
             "popular" : "normal",
@@ -262,7 +262,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "왼쪽 회색 오른쪽 빨간색 세트",
+            "name" : "스트릿 바지 정장 선택(red & black)",
             "price" : 11000,
             "img" : "url('/image/f29.jpg')",
             "popular" : "normal",
@@ -316,7 +316,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "짜리몽땅 후드티와 갈색신발",
+            "name" : "키즈 유아이 X 무신사 콜라보 후드 바지 세트",
             "price" : 30000,
             "img" : "url('/image/f35.jpg')",
             "popular" : "normal",
@@ -325,7 +325,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "핑크색 옷과 가방 세트",
+            "name" : "키즈 유아이 X 유니클로 롱 슬립 세트",
             "price" : 12500,
             "img" : "url('/image/f36.jpg')",
             "popular" : "normal",
@@ -334,7 +334,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "줄무늬 상의와 키작은 바지 세트",
+            "name" : "키즈 유아이 X 버버리 상하의 세트",
             "price" : 11000,
             "img" : "url('/image/f37.jpg')",
             "popular" : "normal",
@@ -343,7 +343,7 @@
             "designName" : "jbh"       
         },
         {
-            "name" : "옷을 진짜 못입는 사람의 신발",
+            "name" : "잭시미키 슬립 롱 니퍼 신발",
             "price" : 15000,
             "img" : "url('/image/f38.jpg')",
             "popular" : "hit",
@@ -352,7 +352,7 @@
             "designName" : "jbh"
         },
         {
-            "name" : "주머니에 손 넣은 사람 또 있네 그냥",
+            "name" : "와이드 롤업 팬츠(카고형)",
             "price" : 30000,
             "img" : "url('/image/f39.jpg')",
             "popular" : "hit",
