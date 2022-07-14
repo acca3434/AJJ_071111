@@ -29,9 +29,9 @@ class JangMainSlide {
         // window.document.onselectstart = new Function("return false");
         // window.document.ondragstart = new Function("return false");
         // ㅜ 이미지 태그 번호 넣기
-        // _this.imgTags.forEach((el, idx, arr) => {
-        //     el.children[0].innerHTML += `${idx + 1} / ${arr.length}`;
-        // })
+        _this.imgTags.forEach((el, idx, arr) => {
+            el.children[0].innerHTML += `${idx + 1} / ${arr.length}`;
+        })
 
         // ㅜ 첫 번째와 마지막 슬라이드 페이지에 한 번에 보여줄 이미지 개수만큼 복사해놓기
         for (let i = 1; i <= _this.imgCount; i++) {
