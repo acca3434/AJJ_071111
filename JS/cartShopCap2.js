@@ -133,7 +133,7 @@ let cartAllList = document.getElementById("cartAllList");
   //220711 추가된 부분
 
   //071311 추가된 부분
-  let jjwFirstInforText = document.createElement("span");
+
 
   let cartNumberCount = 0;
   document.querySelector(".wrapper").style.visibility = "hidden"
@@ -167,7 +167,7 @@ let cartAllList = document.getElementById("cartAllList");
     cartName[key] = document.createElement("p");
     cartName[key].classList.add("cart-name");
     cartName[key].innerHTML = cartUserShopInfor[key].name;
-    
+    cartName[key].classList.add("NewBtn");
     cartSecondText[key] = document.createElement("p");
     cartSecondText[key].classList.add("cart-text");
     cartSecondText[key].innerHTML = cartUserShopInfor[key].price+"원";
@@ -275,6 +275,9 @@ function cartListAppendJbh(jbhcartUserShopInfor) {
       document.getElementById("cartSearchListContainer").after(cartMoreShowBtnjbh);
         break;
      }
+     else if(cartCurrentListCountjbh==cartListCol.length){
+      cartMoreShowBtnjbh.remove();
+      }
      else if(cartListCol[cartListIndex]==null){
         break;
      }
@@ -285,9 +288,6 @@ cartMoreShowBtnjbh.addEventListener("click",function(){
   cartShowListCountjbh += 20;
   cartInput(jbhcartUserShopInfor)
   cartListAppendJbh(jbhcartUserShopInfor);
-if(cartShowListCountjbh==cartListCol.length){
-  cartMoreShowBtnjbh.remove();
-  }
 })
 
 //속성과 값을 가진 태그들을 쏴주는거
@@ -302,15 +302,15 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
      cartPicture[cartListIndex].after(cartBody[cartListIndex]);
      cartBody[cartListIndex].appendChild(cartName[cartListIndex]);
      cartName[cartListIndex].after(cartSecondText[cartListIndex]);
-     cartName[cartListIndex].classList.add("NewBtn");
      cartSecondText[cartListIndex].after(cartBtnContainer[cartListIndex]);
      cartBtnContainer[cartListIndex].appendChild(cartBtnGroup[cartListIndex]);
      cartBtnGroup[cartListIndex].appendChild(cartBtnGetList[cartListIndex]);
      cartBtnGetList[cartListIndex].after(cartBtnShowList[cartListIndex]);
      cartCurrentListCountjjw++
      if(cartCurrentListCountjjw==cartShowListCountjjw){
-      jjwFirstInforText.classList.add("jjw-first-infor-text")
+      let jjwFirstInforText = document.createElement("span");
       jjwFirstInforText.innerHTML = "1차 커뮤니티 상품은<br>'유일하게 개발된 타임머신'<br><br>기부 상품은 댓글과 좋아요로 자유롭게 소통할 수 있는 커뮤니티 공간이며 해당 상품의 판매 수익은 전액 기부됩니다.";
+      jjwFirstInforText.classList.add("jjw-first-infor-text")
       cartPicture[0].style.position = "relative";
       cartPicture[0].style.backgroundColor = "skyblue";
       cartPicture[0].style.backgroundImage = "";
@@ -318,6 +318,9 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
       document.getElementById("jjw-search-list-container").after(cartMoreShowBtnjjw);
         break;
      }
+     else if(cartCurrentListCountjjw==cartListCol.length){
+      cartMoreShowBtnjjw.remove();
+      }
   }
 }
 //초기 상품목록 더보기 버튼을 눌렀을때
@@ -326,9 +329,7 @@ cartMoreShowBtnjjw.addEventListener("click",function(){
   cartInput(jjwcartUserShopInfor);
   cartListAppendJjw(jjwcartUserShopInfor);
   //80개가 다 됐을때 더보기 버튼 삭제
-if(cartShowListCountjjw==cartListCol.length){
-  cartMoreShowBtnjjw.remove();
-  }
+
 })
 
 //속성과 값을 가진 태그들을 쏴주는거
@@ -352,6 +353,9 @@ function cartListAppendAjy(ajycartUserShopInfor) {
       document.getElementById("ajy-search-list-container").after(cartMoreShowBtnajy);
         break;
      }
+     else if(cartCurrentListCountajy==cartListCol.length){
+      cartMoreShowBtnajy.remove();
+     }
      else if(cartListCol[cartListIndex]==null){
       break;
    }
@@ -364,9 +368,6 @@ cartMoreShowBtnajy.addEventListener("click",function(){
   cartInput(ajycartUserShopInfor)
   cartListAppendAjy(ajycartUserShopInfor);
   //80개가 다 됐을때 더보기 버튼 삭제
-if(cartCurrentListCountajy==cartListCol.length){
-  cartMoreShowBtnajy.remove();
-  }
 })
 
   //장바구니 버튼을 눌렀을때
@@ -592,15 +593,14 @@ document.getElementById("cartHighSearchPrice").addEventListener("click",function
   }
     shopCap().then((cartUserShopInfor)=>{
 
-      jbhcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
+      jjwcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
         return a.designName == "jjw"
       })
-
-      jbhcartUserShopInfor.sort(function(a, b){
+      jjwcartUserShopInfor.sort(function(a, b){
         return b.price - a.price;
       });
-      cartInput(jbhcartUserShopInfor)
-      cartListAppendJjw(jbhcartUserShopInfor)
+      cartInput(jjwcartUserShopInfor)
+      cartListAppendJjw(jjwcartUserShopInfor)
   })
   while (document.getElementById("ajy-search-list-container").hasChildNodes()) {
     document.getElementById("ajy-search-list-container").removeChild(document.getElementById("ajy-search-list-container").firstChild);
@@ -682,17 +682,17 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
         cartListAppendJjw(jjwcartUserShopInfor);
         cartSearchText = alert("검색어를 입력해주세요!");
       }
-      else if(cartSearchText=="musical" || cartSearchText=="뮤지컬" || cartSearchText=="연극" || cartSearchText=="연극뮤지컬"){
+      else if(cartSearchText=="뮤지컬" || cartSearchText=="musical" || cartSearchText=="연극" || cartSearchText=="연극뮤지컬"){
         cartSearchText = "musical";
       }
       else if(cartSearchText=="뮤직" || cartSearchText=="music"|| cartSearchText=="음악"|| cartSearchText=="꽃이여"){
         cartSearchText = "music";
       }
-      else if(cartSearchText=="classical music" || cartSearchText=="클래식뮤직" || cartSearchText=="클래식 뮤직"){
+      else if(cartSearchText=="클래식뮤직" ||cartSearchText=="classical music" || cartSearchText=="클래식 뮤직" ){
         cartSearchText = "classical music";
       }
-      cartUserShopInforSearch = jjwcartUserShopInfor.filter(function(data) {
-        return data.classification===cartSearchText;
+      cartUserShopInforSearch = jjwcartUserShopInfor.filter(function(data) {       
+        return data.classification===cartSearchText ;
       });
       cartInput(cartUserShopInforSearch);
       cartListAppendJjw(cartUserShopInforSearch);
@@ -786,21 +786,6 @@ document.getElementById("cartNewProduct").addEventListener("click",function(){
     cartListAppendJbh(cartNewProductInfor);
   })
   cartNewProductInfor=0;
-while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
-  document.getElementById("jjw-search-list-container").removeChild(document.getElementById("jjw-search-list-container").firstChild);
-}
-  shopCap().then((cartUserShopInfor)=>{
-    jjwcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
-      return a.designName == "jjw";
-    })
-    cartNewProductInfor = jjwcartUserShopInfor.sort((a,b)=>{
-      return b.index - a.index;
-    })
-    cartInput(cartNewProductInfor);
-    cartListAppendJjw(cartNewProductInfor);
-  })  
-  cartNewProductInfor=0;
-
   while (document.getElementById("ajy-search-list-container").hasChildNodes()) {
     document.getElementById("ajy-search-list-container").removeChild(document.getElementById("ajy-search-list-container").firstChild);
   }
@@ -815,6 +800,20 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
       cartListAppendAjy(cartNewProductInfor);
     })  
     cartNewProductInfor=0;
+    while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
+      document.getElementById("jjw-search-list-container").removeChild(document.getElementById("jjw-search-list-container").firstChild);
+    }
+      shopCap().then((cartUserShopInfor)=>{
+        jjwcartUserShopInfor =  cartUserShopInfor.filter((a)=>{
+          return a.designName == "jjw";
+        })
+        cartNewProductInfor = jjwcartUserShopInfor.sort((a,b)=>{
+          return b.index - a.index;
+        })
+        cartInput(cartNewProductInfor);
+        cartListAppendJjw(cartNewProductInfor);
+      })  
+      cartNewProductInfor=0;
 })
 
 shopCap().then((cartUserShopInfor)=>{
@@ -846,7 +845,7 @@ shopCap().then((cartUserShopInfor)=>{
     return a.designName == "jjw"
   })
   cartInput(jjwcartUserShopInfor);
-  cartListAppendJjw(jjwcartUserShopInfor);
+  cartListAppendJjw(jjwcartUserShopInfor);``
 
   cartUserShopInfor=0;
 })

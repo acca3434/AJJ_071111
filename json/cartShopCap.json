@@ -363,10 +363,10 @@
         {
             "name": "술잔 옆에 안주로 따뜻한 음악 하나, 꼭 챙겨드세요.",
             "price": 100,
-            "img": "url('/img_AJJ/00_ 산다는 거.jpg')",
+            "img": "undefined",
             "popular": "normal",
             "index": 0,
-            "classification": "musical",
+            "classification": "firstContent",
             "designName": "jjw"
         },
         {
