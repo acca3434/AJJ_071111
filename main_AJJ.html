@@ -632,4 +632,19 @@
   const _signUp = new signUp();
 </script>
 <script src="/JS/cartShopCap2.js"></script>
+<<<<<<< HEAD
 </html>
+=======
+<script>
+  let ajyInfor;
+  shopCap().then((cartUserShopInfor)=>{
+    ajyInfor = cartUserShopInfor.filter((a)=>{
+      return a.designName=="ajy"
+    })
+    for (let imgIndex = 0; imgIndex < ajyInfor.length; imgIndex++) {
+    document.querySelector(".Ahn-img"+[imgIndex]).style.backgroundImage = ajyInfor[imgIndex].img
+   }
+})
+</script>
+</html>
+>>>>>>> parent of 2350ee1 (Real Real Real Fixed To Css And Today JJW)
