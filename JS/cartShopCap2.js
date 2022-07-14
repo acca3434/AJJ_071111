@@ -318,9 +318,6 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
       document.getElementById("jjw-search-list-container").after(cartMoreShowBtnjjw);
         break;
      }
-     else if(cartListCol[cartListIndex]==null){
-      break;
-   }
   }
 }
 //초기 상품목록 더보기 버튼을 눌렀을때
@@ -367,7 +364,7 @@ cartMoreShowBtnajy.addEventListener("click",function(){
   cartInput(ajycartUserShopInfor)
   cartListAppendAjy(ajycartUserShopInfor);
   //80개가 다 됐을때 더보기 버튼 삭제
-if(cartShowListCountajy==cartListCol.length){
+if(cartCurrentListCountajy==cartListCol.length){
   cartMoreShowBtnajy.remove();
   }
 })
@@ -406,7 +403,7 @@ if(cartShowListCountajy==cartListCol.length){
 
     //장바구니 총 합계금액
     cartSumPrice.innerHTML = "총 합계금액"+cartUserListPriceReal;
-    cartBuyListRow.after(cartListSum)
+    cartBuyListRow.after(cartListSum);
     cartListSum.appendChild(cartSumPrice);
     document.getElementById("cart-Buy-list-row").removeChild(cartBuyListCol[btnCartListIndex]);
     cartListPText.splice(cartListPText[btnCartListIndex],1);
