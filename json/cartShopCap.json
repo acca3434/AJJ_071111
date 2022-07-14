@@ -370,11 +370,29 @@
             "designName": "jjw"
         },
         {
+            "name": "사는게 뭔지",
+            "price": 100,
+            "img": "url('/img_AJJ/00_ 사는게 뭔지.jpg')",
+            "popular": "normal",
+            "index": 1,
+            "classification": "music",
+            "designName": "jjw"
+        },
+        {
+            "name": "나 어떡해",
+            "price": 100,
+            "img": "url('/img_AJJ/01_ 나 어떡해.jpg')",
+            "popular": "normal",
+            "index": 2,
+            "classification": "music",
+            "designName": "jjw"
+        },
+        {
             "name": "산다는 거",
             "price": 100,
             "img": "url('/img_AJJ/00_ 산다는 거.jpg')",
             "popular": "normal",
-            "index": 1,
+            "index": 3,
             "classification": "musical",
             "designName": "jjw"
         },
@@ -383,7 +401,7 @@
             "price": 100,
             "img": "url('/img_AJJ/01_ Breathe.jpg')",
             "popular": "normal",
-            "index": 2,
+            "index": 4,
             "classification": "musical",
             "designName": "jjw"
         },
@@ -392,7 +410,7 @@
             "price": 100,
             "img": "url('/img_AJJ/02_ 세월이 흘러.jpg')",
             "popular": "normal",
-            "index": 3,
+            "index": 5,
             "classification": "musical",
             "designName": "jjw"
         },
