@@ -18,7 +18,7 @@ class signUp {
         _this.signupModal.style.display = "none";
         _this.signupIcon.addEventListener("click", function () {
             if(userSignInInfor.email!="" && userSignInInfor.pw!=""){
-             alert(userSignInInfor.name+" 님은 이미 로그인 하셨습니다");
+             alert(userSignInInfor.name+" 님은 이미 로그인 정보가 있습니다!");
              _this.signupModal.style.display = "none";
             }
             else{

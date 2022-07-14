@@ -249,7 +249,6 @@ let cartAllList = document.getElementById("cartAllList");
         document.querySelector(".cart-list-text").appendChild(cartListPText[cartListResult]); 
         cartListResult++;
         document.querySelector(".circleNumber").innerHTML = cartNumberCount;
-
     })
   }
 }
@@ -273,10 +272,10 @@ function cartListAppendJbh(jbhcartUserShopInfor) {
      cartCurrentListCountjbh++
     if(cartCurrentListCountjbh==cartShowListCountjbh){
       document.getElementById("cartSearchListContainer").after(cartMoreShowBtnjbh);
+      if(cartCurrentListCountjbh==jbhcartUserShopInfor.length){
+        cartMoreShowBtnjbh.remove();
+      }
         break;
-    }
-    if(cartCurrentListCountjbh==jbhcartUserShopInfor.length){
-      cartMoreShowBtnjbh.remove();
     }
   }
 }
@@ -448,7 +447,6 @@ document.getElementById("cartSearchBtn").addEventListener("click",function(){
     })
       cartInput(cartUserSearchPriceInfor);
       cartListAppendJbh(cartUserSearchPriceInfor);
-
   })
 
   cartUserSearchPriceInfor = 0;
@@ -499,6 +497,12 @@ document.getElementById("cartSearchBtn").addEventListener("click",function(){
         cartListAppendAjy(cartUserSearchPriceInfor);
     })
     cartUserSearchPriceInfor = 0;
+    cartCurrentListCountjbh = 0;
+    cartShowListCountjbh = 20;
+    cartCurrentListCountjjw = 0;
+    cartShowListCountjjw = 20;
+    cartCurrentListCountajy = 0;
+    cartShowListCountajy = 20;
 })
 
 //낮은 가격순 눌렀을때
@@ -525,6 +529,7 @@ document.getElementById("cartRowSearchPrice").addEventListener("click",function(
       cartInput(jbhcartUserShopInfor)
       cartListAppendJbh(jbhcartUserShopInfor)
   })
+
 
   while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
     document.getElementById("jjw-search-list-container").removeChild(document.getElementById("jjw-search-list-container").firstChild);
@@ -557,6 +562,12 @@ document.getElementById("cartRowSearchPrice").addEventListener("click",function(
       cartInput(ajycartUserShopInfor)
       cartListAppendAjy(ajycartUserShopInfor)
   })
+  cartCurrentListCountjbh = 0;
+  cartShowListCountjbh = 20;
+  cartCurrentListCountjjw = 0;
+  cartShowListCountjjw = 20;
+  cartCurrentListCountajy = 0;
+  cartShowListCountajy = 20;
 })
 
 //높은 가격순 눌렀을때
@@ -613,6 +624,12 @@ document.getElementById("cartHighSearchPrice").addEventListener("click",function
       cartInput(ajycartUserShopInfor)
       cartListAppendAjy(ajycartUserShopInfor)
   })
+  cartCurrentListCountjbh = 0;
+  cartShowListCountjbh = 20;
+  cartCurrentListCountjjw = 0;
+  cartShowListCountjjw = 20;
+  cartCurrentListCountajy = 0;
+  cartShowListCountajy = 20;
 })
 
 //상품검색을 위한 태그 쏴주기
@@ -725,12 +742,22 @@ while (document.getElementById("jjw-search-list-container").hasChildNodes()) {
   while (document.querySelector(".cart-search-text-body").hasChildNodes()) {
   document.querySelector(".cart-search-text-body").removeChild(document.querySelector(".cart-search-text-body").firstChild);
   }
-  
+  cartCurrentListCountjbh = 0;
+  cartShowListCountjbh = 20;
+  cartCurrentListCountjjw = 0;
+  cartShowListCountjjw = 20;
+  cartCurrentListCountajy = 0;
+  cartShowListCountajy = 20;
 })
 
 //상품검색 입력란을 클릭했을때
 document.getElementById("cartSearchText").addEventListener("click",function(){
-
+  cartCurrentListCountjbh = 0;
+  cartShowListCountjbh = 20;
+  cartCurrentListCountjjw = 0;
+  cartShowListCountjjw = 20;
+  cartCurrentListCountajy = 0;
+  cartShowListCountajy = 20;
   document.querySelector(".cart-search-text-body").innerHTML = "최근검색어";
   while (cartSearchFirst < cartSearchTextLast.length) {
     cartSearchLink[cartSearchFirst] = document.createElement("a");
@@ -748,6 +775,12 @@ document.getElementById("cartSearchText").addEventListener("click",function(){
     cartSearchFirst++
   }
   cartSearchFirst = 0;
+  cartCurrentListCountjbh = 0;
+  cartShowListCountjbh = 20;
+  cartCurrentListCountjjw = 0;
+  cartShowListCountjjw = 20;
+  cartCurrentListCountajy = 0;
+  cartShowListCountajy = 20;
 })
 
 document.getElementById("cartSearchText").addEventListener("focusout",function(){
@@ -809,6 +842,12 @@ document.getElementById("cartNewProduct").addEventListener("click",function(){
         cartListAppendJjw(cartNewProductInfor);
       })  
       cartNewProductInfor=0;
+      cartCurrentListCountjbh = 0;
+      cartShowListCountjbh = 20;
+      cartCurrentListCountjjw = 0;
+      cartShowListCountjjw = 20;
+      cartCurrentListCountajy = 0;
+      cartShowListCountajy = 20;
 })
 
 shopCap().then((cartUserShopInfor)=>{
