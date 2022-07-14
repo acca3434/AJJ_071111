@@ -85,4 +85,3 @@ class numberAnimation {
       }, 0)
     }
   }
-  const _numberAnimation = new numberAnimation();
