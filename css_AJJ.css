@@ -444,7 +444,6 @@
   }
   
   .main-slide-wrap, .Ahn-slide-wrap, .Joo-slide-wrap, .Jang-slide-wrap {
-    position: absolute;
     display: flex;
     left: 0;
   }
@@ -464,14 +463,21 @@
     list-style: none;
   }
   
-  [class ^= "main-img"], [class ^= "Ahn-img"], [class ^= "Joo-img"], [class ^= "Jang-img"] {
+  [class ^= "main-img"] {
     background-size: cover;
     background-color: skyblue;
     justify-content: center;
     align-items: center;
     display: flex;
   }
-  
+  [class ^= "Ahn-img"], [class ^= "Joo-img"], [class ^= "Jang-img"]{
+    position: absolute;
+    background-size: cover;
+    background-color: skyblue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
   [class ^= "rank-img"] {
     background-size: cover;
     justify-content: center;
