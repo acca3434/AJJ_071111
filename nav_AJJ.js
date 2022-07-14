@@ -39,6 +39,7 @@ class mainNav {
         this.keypressNumber = 0;
         //회원가입 삭제버튼 눌렀을때 삭제되게하려고 가져온거
         this.signupModal = document.querySelector('.signup-modal');
+        this.logoTag = document.querySelector(".logo");
         //섹션 인덱스
         this.index = 0;
         this.init();
@@ -115,7 +116,12 @@ class mainNav {
                     break;
             }
         }
-
+        _this.logoTag.addEventListener("click",function(){
+            _this.searchTag.remove();
+            _this.allSectionsTag.style.top = `${0}vh`;
+            _this.remoconMove();
+            _this.remoconOff();
+        })
         //TOP 버튼 클릭시 메인 페이지로 이동
         _this.topIcon.addEventListener("click", function () {
             _this.searchTag.remove();

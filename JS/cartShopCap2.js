@@ -254,9 +254,10 @@ let cartAllList = document.getElementById("cartAllList");
     })
   }
 }
+
 //속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJbh(jbhcartUserShopInfor) {
-  while (cartCurrentListCountjbh < cartListCol.length) {
+  while (cartCurrentListCountjbh < jbhcartUserShopInfor.length) {
     let cartListIndex = cartCurrentListCountjbh;
      document.getElementById("cartSearchListContainer").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -271,18 +272,16 @@ function cartListAppendJbh(jbhcartUserShopInfor) {
      cartBtnGroup[cartListIndex].appendChild(cartBtnGetList[cartListIndex]);
      cartBtnGetList[cartListIndex].after(cartBtnShowList[cartListIndex]);
      cartCurrentListCountjbh++
-     if(cartCurrentListCountjbh==cartShowListCountjbh){
+    if(cartCurrentListCountjbh==cartShowListCountjbh){
       document.getElementById("cartSearchListContainer").after(cartMoreShowBtnjbh);
         break;
-     }
-     else if(cartCurrentListCountjbh==cartListCol.length){
+    }
+    if(cartCurrentListCountjbh==jbhcartUserShopInfor.length){
       cartMoreShowBtnjbh.remove();
-      }
-     else if(cartListCol[cartListIndex]==null){
-        break;
-     }
+    }
   }
 }
+
 //초기 상품목록 더보기 버튼을 눌렀을때
 cartMoreShowBtnjbh.addEventListener("click",function(){
   cartShowListCountjbh += 20;
@@ -291,8 +290,44 @@ cartMoreShowBtnjbh.addEventListener("click",function(){
 })
 
 //속성과 값을 가진 태그들을 쏴주는거
+function cartListAppendAjy(ajycartUserShopInfor) {
+  while (cartCurrentListCountajy < ajycartUserShopInfor.length) {
+    let cartListIndex = cartCurrentListCountajy;
+     document.getElementById("ajy-search-list-container").appendChild(cartListCol[cartListIndex]);
+     cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
+     cartContainer[cartListIndex].appendChild(cartPicture[cartListIndex]);
+     cartPicture[cartListIndex].appendChild(cartFirstText[cartListIndex]);
+     cartFirstText[cartListIndex].appendChild(cartPicHover[cartListIndex]);
+     cartPicture[cartListIndex].after(cartBody[cartListIndex]);
+     cartBody[cartListIndex].appendChild(cartName[cartListIndex]);
+     cartName[cartListIndex].after(cartSecondText[cartListIndex]);
+     cartSecondText[cartListIndex].after(cartBtnContainer[cartListIndex]);
+     cartBtnContainer[cartListIndex].appendChild(cartBtnGroup[cartListIndex]);
+     cartBtnGroup[cartListIndex].appendChild(cartBtnGetList[cartListIndex]);
+     cartBtnGetList[cartListIndex].after(cartBtnShowList[cartListIndex]);
+     cartCurrentListCountajy++
+     if(cartCurrentListCountajy==cartShowListCountajy){
+      document.getElementById("ajy-search-list-container").after(cartMoreShowBtnajy);
+        break;
+     }
+     if(cartCurrentListCountajy==ajycartUserShopInfor.length){
+      cartMoreShowBtnajy.remove();
+     }
+  }
+}
+
+//초기 상품목록 더보기 버튼을 눌렀을때
+cartMoreShowBtnajy.addEventListener("click",function(){
+  cartShowListCountajy += 20;
+  cartInput(ajycartUserShopInfor)
+  cartListAppendAjy(ajycartUserShopInfor);
+  //80개가 다 됐을때 더보기 버튼 삭제
+})
+
+
+//속성과 값을 가진 태그들을 쏴주는거
 function cartListAppendJjw(jjwcartUserShopInfor) {
-  while (cartCurrentListCountjjw < cartListCol.length) {
+  while (cartCurrentListCountjjw < jjwcartUserShopInfor.length) {
     let cartListIndex = cartCurrentListCountjjw;
      document.getElementById("jjw-search-list-container").appendChild(cartListCol[cartListIndex]);
      cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
@@ -318,8 +353,8 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
       document.getElementById("jjw-search-list-container").after(cartMoreShowBtnjjw);
         break;
      }
-     else if(cartCurrentListCountjjw==cartListCol.length){
-      cartMoreShowBtnjjw.remove();
+      if(cartCurrentListCountjjw==jjwcartUserShopInfor.length){
+        cartMoreShowBtnjjw.remove();
       }
   }
 }
@@ -328,47 +363,8 @@ cartMoreShowBtnjjw.addEventListener("click",function(){
   cartShowListCountjjw += 20;
   cartInput(jjwcartUserShopInfor);
   cartListAppendJjw(jjwcartUserShopInfor);
-  //80개가 다 됐을때 더보기 버튼 삭제
-
 })
 
-//속성과 값을 가진 태그들을 쏴주는거
-function cartListAppendAjy(ajycartUserShopInfor) {
-  while (cartCurrentListCountajy < cartListCol.length) {
-    let cartListIndex = cartCurrentListCountajy;
-     document.getElementById("ajy-search-list-container").appendChild(cartListCol[cartListIndex]);
-     cartListCol[cartListIndex].appendChild(cartContainer[cartListIndex]);
-     cartContainer[cartListIndex].appendChild(cartPicture[cartListIndex]);
-     cartPicture[cartListIndex].appendChild(cartFirstText[cartListIndex]);
-     cartFirstText[cartListIndex].appendChild(cartPicHover[cartListIndex]);
-     cartPicture[cartListIndex].after(cartBody[cartListIndex]);
-     cartBody[cartListIndex].appendChild(cartName[cartListIndex]);
-     cartName[cartListIndex].after(cartSecondText[cartListIndex]);
-     cartSecondText[cartListIndex].after(cartBtnContainer[cartListIndex]);
-     cartBtnContainer[cartListIndex].appendChild(cartBtnGroup[cartListIndex]);
-     cartBtnGroup[cartListIndex].appendChild(cartBtnGetList[cartListIndex]);
-     cartBtnGetList[cartListIndex].after(cartBtnShowList[cartListIndex]);
-     cartCurrentListCountajy++
-     if(cartCurrentListCountajy==cartShowListCountajy){
-      document.getElementById("ajy-search-list-container").after(cartMoreShowBtnajy);
-        break;
-     }
-     else if(cartCurrentListCountajy==cartListCol.length){
-      cartMoreShowBtnajy.remove();
-     }
-     else if(cartListCol[cartListIndex]==null){
-      break;
-   }
-  }
-}
-
-//초기 상품목록 더보기 버튼을 눌렀을때
-cartMoreShowBtnajy.addEventListener("click",function(){
-  cartShowListCountajy += 20;
-  cartInput(ajycartUserShopInfor)
-  cartListAppendAjy(ajycartUserShopInfor);
-  //80개가 다 됐을때 더보기 버튼 삭제
-})
 
   //장바구니 버튼을 눌렀을때
   
@@ -781,7 +777,6 @@ document.getElementById("cartNewProduct").addEventListener("click",function(){
     cartNewProductInfor = jbhcartUserShopInfor.sort((a,b)=>{
       return b.index - a.index;
     })
-
     cartInput(cartNewProductInfor);
     cartListAppendJbh(cartNewProductInfor);
   })
@@ -852,13 +847,13 @@ shopCap().then((cartUserShopInfor)=>{
 
 /* 220711 추가된 부분  */
 if(document.documentElement.scrollTop==0){
-  document.querySelector(".search").style.backgroundColor = "#ffffff00";
+  document.querySelector(".search").style.backgroundColor = "";
   document.querySelector(".search").style.visibility = "hidden";
-  document.querySelector(".logo").style.backgroundColor = "ffffff00";
-  document.querySelector(".Ann-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
+  document.querySelector(".logo").style.backgroundColor = "";
+  document.querySelector(".Ann-shop").style.backgroundColor = "";
+  document.querySelector(".Joo-shop").style.backgroundColor = "";
+  document.querySelector(".Jang-shop").style.backgroundColor = "";
+  document.querySelector(".search-rank").style.backgroundColor = "";
 }
 document.querySelector(".Ann-shop").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
@@ -888,23 +883,22 @@ document.querySelector(".Jang-shop").addEventListener("click",function(){
   document.querySelector(".search-rank").style.backgroundColor = "white";
 })
 document.querySelector(".top-icon").addEventListener("click",function(){
-  document.querySelector(".search").style.backgroundColor = "#ffffff00";
+  document.querySelector(".search").style.backgroundColor = "";
   document.querySelector(".search").style.visibility = "hidden";
-  document.querySelector(".logo").style.backgroundColor = "ffffff00";
-  document.querySelector(".Ann-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
+  document.querySelector(".logo").style.backgroundColor = "";
+  document.querySelector(".Ann-shop").style.backgroundColor = "";
+  document.querySelector(".Joo-shop").style.backgroundColor = "";
+  document.querySelector(".Jang-shop").style.backgroundColor = "";
+  document.querySelector(".search-rank").style.backgroundColor = "";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
-
 })
 document.querySelector(".logo").addEventListener("click",function(){
-  document.querySelector(".search").style.backgroundColor = "#ffffff00";
+  document.querySelector(".search").style.backgroundColor = "";
   document.querySelector(".search").style.visibility = "hidden";
-  document.querySelector(".logo").style.backgroundColor = "ffffff00";
-  document.querySelector(".Ann-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".Joo-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".Jang-shop").style.backgroundColor = "ffffff00";
-  document.querySelector(".search-rank").style.backgroundColor = "ffffff00";
+  document.querySelector(".logo").style.backgroundColor = "";
+  document.querySelector(".Ann-shop").style.backgroundColor = "";
+  document.querySelector(".Joo-shop").style.backgroundColor = "";
+  document.querySelector(".Jang-shop").style.backgroundColor = "";
+  document.querySelector(".search-rank").style.backgroundColor = "";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 })
