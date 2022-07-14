@@ -39,6 +39,13 @@ body {
   height: 8vh;
 }
 
+.search-rank {
+  text-align: center;
+  color: royalblue;
+  padding-top: 2vw;
+  width: 19.7vw;
+}
+
 [class^="section"] {
   border: 0.3vw solid black;
   height: 100%;
@@ -330,7 +337,7 @@ body {
   margin: 0.521vw auto;
   width: 35vw;
   position: relative;
-  top: -1.8vw;
+  top: 1.563vw;
   right: 0;
   z-index: 999;
 }
@@ -551,13 +558,12 @@ li {
 /* numberAnimation_AJJ */
 
 .number-animation-increase {
-  padding-top: calc((150px - 100px) / 2);
-  background-color: pink;
+  display: flex;
   text-align: center;
   font-weight: 900;
-  font-size: 50px;
-  height: 150px;
-  width: 300px;
+  font-size: 7vw;
+  align-items: center;
+  justify-content: center;
 }
 
 .number-animation-increase:hover {
@@ -565,48 +571,3 @@ li {
 }
 
 /* 07 12 18 최종 수정 */
-
-
-
-/* 07 14 09 추가부분 */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.rank-slide-container {
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  display: flex;
-  width: 19.7vw;
-}
-
-[class $="-slide-wrap"] {
-  flex-direction: column;
-  position: absolute;
-  display: flex;
-  left: 0;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-[class *="-img"] {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.page-number {
-  text-align: center;
-  font-weight: 900;
-  font-size: 1.5vw;
-}
