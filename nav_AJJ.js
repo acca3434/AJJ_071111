@@ -39,6 +39,8 @@ class mainNav {
         this.keypressNumber = 0;
         //회원가입 삭제버튼 눌렀을때 삭제되게하려고 가져온거
         this.signupModal = document.querySelector('.signup-modal');
+        //출석체크 삭제버튼 눌렀을 때 삭제되게하려고 가져온거
+        this.mainContainer = document.querySelector(".main-container");
         this.logoTag = document.querySelector(".logo");
         //섹션 인덱스
         this.index = 0;
@@ -110,6 +112,11 @@ class mainNav {
                 case 'signup-delete':
                     if (_this.signupModal.style.display === "block") {
                         _this.signupModal.style.display = "none";
+                    };
+                    break;
+                case 'check-delete':
+                    if (_this.mainContainer.style.display === "block") {
+                        _this.mainContainer.style.display = "none";
                     };
                     break;
                 default:

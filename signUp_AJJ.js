@@ -4,7 +4,7 @@ class signUp {
         this.regTel = /^[0](\d{2,3})(\d{3,4})(\d{3,4})$/;
         this.regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
         this.regPassword = /^(?!((?:[A-Za-z]+)|(?:[~!@#$%^&*()_+=]+)|(?=[0-9]+))$)[A-Za-z\d~!@#$%^&*()_+=]{6,}$/;
-        this.inputTags = document.querySelectorAll("[id ^= 'input']");
+        this.inputTags = document.querySelectorAll("[id ^= 'input-']");
         this.formTag = document.querySelector("form");
         this.regs = [this.regName, this.regTel, this.regEmail, this.regPassword, ,];
         this.disallowMessages = [];
@@ -17,8 +17,13 @@ class signUp {
         let _this = this;
         _this.signupModal.style.display = "none";
         _this.signupIcon.addEventListener("click", function () {
-            _this.signupModal.style.display = "block";
-
+            if(userSignInInfor.email!="" && userSignInInfor.pw!=""){
+             alert(userSignInInfor.name+" 님은 이미 로그인 하셨습니다");
+             _this.signupModal.style.display = "none";
+            }
+            else{
+                _this.signupModal.style.display = "block";
+            }
         });
 
         Object.prototype.insertAfter = function (newNode) {

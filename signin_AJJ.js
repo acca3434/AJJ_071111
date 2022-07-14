@@ -33,7 +33,12 @@ userInfor = {
     {
         loadJson().then((user) => {
             for (const key in user) {
-                if (userInfor.userInputEmail == "" && userInfor.userInputPw == "") {
+                if(userSignInInfor.email!="" && userSignInInfor.pw!=""){
+                    modal.style.display = "none";
+                    alert(userSignInInfor.name+" 님은 이미 로그인 하셨습니다")
+                    break;
+                }
+                else if (userInfor.userInputEmail == "" && userInfor.userInputPw == "") {
                     alert("이메일과 비밀번호를 입력해주세요!");
                     break;
                 } else if (userInfor.userInputEmail == "" && userInfor.userInputPw != "") {
@@ -55,9 +60,10 @@ userInfor = {
                     } else if (user[key].email == userInfor.userInputEmail && user[key].pw == userInfor.userInputPw) { 
                         alert(user[key].name + " 환영합니다!");
                         modal.style.display = 'none';
-                        let signInText = document.createElement("p");
+                        signInText = document.createElement("p");
                         signInText.classList.add("sign-in-text")
-                        signInText.innerHTML = user[key].name +" 님 환영합니다";
+                        signInText.innerHTML = user[key].name +" 님 환영합니다!";
+                        userSignInInfor = user[key]
                         document.querySelector(".search").appendChild(signInText);
                         break;
                     }

@@ -19,9 +19,9 @@ class JangRankSlide {
       let _this = this;
 
       // ㅜ 드래그, 우클릭, 블럭 방지하기
-      window.document.ondragstart = new Function("return false");
-      window.document.oncontextmenu = new Function("return false");
-      window.document.onselectstart = new Function("return false");
+      // window.document.ondragstart = new Function("return false");
+      // window.document.oncontextmenu = new Function("return false");
+      // window.document.onselectstart = new Function("return false");
 
       // ㅜ 태그의 번호 넣기
       _this.imgTags.forEach((el, idx, arr) => {
@@ -62,7 +62,7 @@ class JangRankSlide {
         // ㅜ 첫 번째 태그의 색상 변화시키기
         _this._setTimeOut = setTimeout(() => {
           _this.index = 1;
-          _this.imgTags[_this.index].style.color = "white";
+          _this.imgTags[_this.index].style.color = "royalblue";
 
           // ㅜ 자동 슬라이드 시작하기
           _this.autoPlayFn = null;
@@ -115,7 +115,7 @@ class JangRankSlide {
 
         // ㅜ 첫 번째 태그의 색상 변화시키기 
         _this._setTimeOut = setTimeout(() => {
-          _this.imgTags[_this.index].style.color = "white";
+          _this.imgTags[_this.index].style.color = "royalblue";
           _this.slideWrapTag.style.transition = `${_this.slideSecond}s`;
 
           // ㅜ 다음 태그로 Y 위치 조정하기
@@ -126,7 +126,7 @@ class JangRankSlide {
 
             // ㅜ 다음 태그와 이전 태그의 색상 변화시키기
             _this._setTimeOut = setTimeout(() => {
-              _this.imgTags[_this.index].style.color = "white";
+              _this.imgTags[_this.index].style.color = "royalblue";
               _this.imgTags[_this.prevIndex].style.color = "";
 
               // ㅜ 자동 슬라이드 시작하기
@@ -154,7 +154,7 @@ class JangRankSlide {
 
         // ㅜ 다음 태그와 이전 태그의 색상 변화시키기
         _this._setTimeOut = setTimeout(() => {
-          _this.imgTags[_this.index].style.color = "white";
+          _this.imgTags[_this.index].style.color = "royalblue";
           _this.imgTags[_this.prevIndex].style.color = "";
 
           // ㅜ 마지막 태그일 경우 복사해둔 Y 위치로 이동하기
@@ -162,7 +162,7 @@ class JangRankSlide {
             if (_this.index >= (_this.imgTags.length - 1)) {
               _this.index = 0;
               _this.slideWrapTag.style.transition = "";
-              _this.imgTags[_this.index].style.color = "white";
+              _this.imgTags[_this.index].style.color = "royalblue";
               _this.slideWrapTag.style.transform = `translateY(0vh)`;
             }
           }, _this.slideSecond * 500);
@@ -180,7 +180,7 @@ class JangRankSlide {
           // ㅜ 다음 태그의 색상 변화시키기
           if (_this.index >= (_this.imgTags.length - 1)) _this.index = 1;
           else _this.index++;
-          _this.imgTags[_this.index].style.color = "white";
+          _this.imgTags[_this.index].style.color = "royalblue";
 
         }, _this.slideSecond * 500);
       }

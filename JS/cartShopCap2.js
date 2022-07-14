@@ -167,7 +167,6 @@ let cartAllList = document.getElementById("cartAllList");
     cartName[key] = document.createElement("p");
     cartName[key].classList.add("cart-name");
     cartName[key].innerHTML = cartUserShopInfor[key].name;
-    cartName[key].classList.add("NewBtn");
     cartSecondText[key] = document.createElement("p");
     cartSecondText[key].classList.add("cart-text");
     cartSecondText[key].innerHTML = cartUserShopInfor[key].price+"원";
@@ -337,6 +336,7 @@ function cartListAppendJjw(jjwcartUserShopInfor) {
      cartPicture[cartListIndex].after(cartBody[cartListIndex]);
      cartBody[cartListIndex].appendChild(cartName[cartListIndex]);
      cartName[cartListIndex].after(cartSecondText[cartListIndex]);
+     cartName[cartListIndex].classList.add("NewBtn");
      cartSecondText[cartListIndex].after(cartBtnContainer[cartListIndex]);
      cartBtnContainer[cartListIndex].appendChild(cartBtnGroup[cartListIndex]);
      cartBtnGroup[cartListIndex].appendChild(cartBtnGetList[cartListIndex]);
@@ -853,7 +853,7 @@ if(document.documentElement.scrollTop==0){
   document.querySelector(".Ann-shop").style.backgroundColor = "";
   document.querySelector(".Joo-shop").style.backgroundColor = "";
   document.querySelector(".Jang-shop").style.backgroundColor = "";
-  document.querySelector(".rank-slide-container").style.backgroundColor = "";
+  document.querySelector(".search-rank").style.backgroundColor = "";
 }
 document.querySelector(".Ann-shop").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
@@ -862,7 +862,7 @@ document.querySelector(".Ann-shop").addEventListener("click",function(){
   document.querySelector(".Ann-shop").style.backgroundColor = "white";
   document.querySelector(".Joo-shop").style.backgroundColor = "white";
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
-  document.querySelector(".rank-slide-container").style.backgroundColor = "white";
+  document.querySelector(".search-rank").style.backgroundColor = "white";
 })
 document.querySelector(".Joo-shop").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
@@ -871,7 +871,7 @@ document.querySelector(".Joo-shop").addEventListener("click",function(){
   document.querySelector(".Ann-shop").style.backgroundColor = "white";
   document.querySelector(".Joo-shop").style.backgroundColor = "white";
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
-  document.querySelector(".rank-slide-container").style.backgroundColor = "white";
+  document.querySelector(".search-rank").style.backgroundColor = "white";
 })
 document.querySelector(".Jang-shop").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
@@ -880,7 +880,7 @@ document.querySelector(".Jang-shop").addEventListener("click",function(){
   document.querySelector(".Ann-shop").style.backgroundColor = "white";
   document.querySelector(".Joo-shop").style.backgroundColor = "white";
   document.querySelector(".Jang-shop").style.backgroundColor = "white";
-  document.querySelector(".rank-slide-container").style.backgroundColor = "white";
+  document.querySelector(".search-rank").style.backgroundColor = "white";
 })
 document.querySelector(".top-icon").addEventListener("click",function(){
   document.querySelector(".search").style.backgroundColor = "";
@@ -889,7 +889,7 @@ document.querySelector(".top-icon").addEventListener("click",function(){
   document.querySelector(".Ann-shop").style.backgroundColor = "";
   document.querySelector(".Joo-shop").style.backgroundColor = "";
   document.querySelector(".Jang-shop").style.backgroundColor = "";
-  document.querySelector(".rank-slide-container").style.backgroundColor = "";
+  document.querySelector(".search-rank").style.backgroundColor = "";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 })
 document.querySelector(".logo").addEventListener("click",function(){
@@ -899,6 +899,6 @@ document.querySelector(".logo").addEventListener("click",function(){
   document.querySelector(".Ann-shop").style.backgroundColor = "";
   document.querySelector(".Joo-shop").style.backgroundColor = "";
   document.querySelector(".Jang-shop").style.backgroundColor = "";
-  document.querySelector(".rank-slide-container").style.backgroundColor = "";
+  document.querySelector(".search-rank").style.backgroundColor = "";
   document.querySelector(".cart-search-text-body").style.visibility = "hidden";
 })
