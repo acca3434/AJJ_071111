@@ -7,7 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>실시간 검색어</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        .rank-slide-container {
+            position: relative;
+            border: 2px solid royalblue;
+            top: 10vh;
+            overflow: hidden;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        [class $="-slide-wrap"] {
+            flex-direction: column;
+            position: absolute;
+            display: flex;
+            left: 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        [class *="-img"] {
+            background-color: skyblue;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .page-number {
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.5vw;
+        }
     </style>
 </head>
 
@@ -53,7 +94,7 @@
         constructor(classNameValue) {
             this.index = 1;
             this.prevIndex;
-            this.margin = 0;
+            this.margin = 0.5;
             this.slideWidth = 20;
             this.slideHeight = 8;
             this._setTimeOut = null;

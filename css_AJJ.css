@@ -39,12 +39,6 @@ body {
   height: 8vh;
 }
 
-.search-rank {
-  text-align: center;
-  color: royalblue;
-  padding-top: 2vw;
-  width: 19.7vw;
-}
 
 [class^="section"] {
   border: 0.3vw solid black;
@@ -60,7 +54,7 @@ body {
   width: 100vw;
 }
 
-[class$="shop"] {
+[class $= "shop"] {
   padding-top: calc((10vh - 1.2vw) / 2);
   border-bottom: 0.3vw solid black;
   text-align: center;
@@ -72,12 +66,10 @@ body {
   width: 20vw;
 }
 
-[class$="shop"]:hover {
+[class $= "shop"]:hover {
   border-bottom: 0.3vw solid royalblue;
   color: royalblue;
 }
-
-.section1 {}
 
 .section2 {
   overflow: scroll;
@@ -367,7 +359,7 @@ body {
   
 }
 
-[id ^="input"] {
+[id ^= "input"] {
   font-size: 1.042vw;
   padding: 0.26vw;
   height: 1.5vw;
@@ -381,16 +373,16 @@ body {
   margin-bottom: 1vw;
 }
 
-[id ^="input"]::placeholder {
+[id ^= "input"]::placeholder {
   font-size: 0.8vw;
 }
 
-[id ^="input"].is-invalid {
+[id ^= "input"].is-invalid {
   outline: 0.052vw solid red;
   border: 0.052vw solid red;
 }
 
-[id ^="input"].is-valid {
+[id ^= "input"].is-valid {
   outline: 0.052vw solid palevioletred;
   border: 0.052vw solid palevioletred;
 }
@@ -436,7 +428,21 @@ body {
   top: 17vh;
 }
 
-[class $="-slide-wrap"] {
+.rank-slide-container {
+  margin: 4vh auto 0vh auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.main-slide-wrap, .Ahn-slide-wrap, .Joo-slide-wrap, .Jang-slide-wrap {
+  position: absolute;
+  display: flex;
+  left: 0;
+}
+
+.rank-slide-wrap {
+  flex-direction: column;
   position: absolute;
   display: flex;
   left: 0;
@@ -450,9 +456,16 @@ li {
   list-style: none;
 }
 
-[class *="-img"] {
-  background-size:cover;
+[class ^= "main-img"], [class ^= "Ahn-img"], [class ^= "Joo-img"], [class ^= "Jang-img"] {
+  background-size: cover;
   background-color: skyblue;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+[class ^= "rank-img"] {
+  background-size: cover;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -465,8 +478,14 @@ li {
   color: white;
 }
 
-[class $="-next-btn"],
-[class $="-prev-btn"] {
+.rank-page-number {
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+[class $= "-next-btn"],
+[class $= "-prev-btn"] {
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateY(-50%);
   border-radius: 30px;
