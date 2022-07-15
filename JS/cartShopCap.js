@@ -432,7 +432,6 @@ function shopCap(){
       cartNewProductInfor = cartUserShopInfor.sort((a,b)=>{
         return b.index - a.index;
       })
-      console.log(cartNewProductInfor);
       cartInput(cartNewProductInfor);
       cartListAppend(cartNewProductInfor);
     })  
@@ -451,7 +450,6 @@ function shopCap(){
       cartHitProductList = cartUserShopInfor.filter((data)=>{
         return data.popular == "hit";
       })
-      console.log(cartHitProductList);
     cartInput(cartHitProductList);
     cartListAppend(cartHitProductList);
     })  

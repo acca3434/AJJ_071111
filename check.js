@@ -5,12 +5,9 @@ const checkIcon = document.querySelector('.check-icon');
 //새로운 만들 div를 담아 놓는 배열
 const datediv = [];
 
-console.log(checkIcon);
-console.log(mainContainer);
 
 mainContainer.style.display = 'none';
 checkIcon.addEventListener("click", function (){
-    console.log("안녕");
     mainContainer.style.display = 'block';
 });
 
@@ -25,7 +22,6 @@ for(let i=1;i<36;i++){
 //현재 날짜 요일 값
 const date = new Date(Date.now());
 const nowdate = date.getDate();
-console.log(nowdate);
 
 const day = document.querySelectorAll(".date");
 

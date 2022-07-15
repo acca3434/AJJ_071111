@@ -126,14 +126,14 @@ class mainNav {
         _this.logoTag.addEventListener("click",function(){
             _this.searchTag.remove();
             _this.allSectionsTag.style.top = `${0}vh`;
-            _this.remoconMove();
+            _this.remoconMove(0);
             _this.remoconOff();
         })
         //TOP 버튼 클릭시 메인 페이지로 이동
         _this.topIcon.addEventListener("click", function () {
             _this.searchTag.remove();
             _this.allSectionsTag.style.top = `${0}vh`;
-            _this.remoconMove();
+            _this.remoconMove(0);
             _this.remoconOff();
         })
 
@@ -156,7 +156,7 @@ class mainNav {
                     _this.remocon.style.opacity = "1";
                     _this.remocon.style.visibility = "visible";
                     setTimeout(() => {
-                        _this.remoconMove();
+                        _this.remoconMove(_this.index);
                     }, 100);
                 }, 100);
             };
@@ -187,12 +187,12 @@ class mainNav {
     }
 
     //리모컨 생성 및 위치 조절
-    remoconMove() {
+    remoconMove(index) {
         let _this = this;
         if (!_this.remocon.classList.contains("remoconMoveOn")) {
             _this.remocon.classList.add("remoconMoveOn");
         }
-        _this.remocon.style.top = `${(_this.index) * 100 + 50}vh`;
+        _this.remocon.style.top = `${(index) * 100 + 50}vh`;
     }
 
     //리사이징 되었을 때 리모컨 transition없애기

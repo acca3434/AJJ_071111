@@ -683,7 +683,17 @@
     position: relative;
     z-index: 9999;
     width: 100px;
+    animation: move 0.5s alternate infinite;
     /* top: 800px;
     left: 1800px; */
+  }
+
+  @keyframes move {
+    from {
+      transform: rotateY(-30deg);
+    }
+    to {
+      transform: rotateY(30deg);
+    }
   }
   /* 07 14 18 최종 수정 */

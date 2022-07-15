@@ -45,7 +45,6 @@ class AhnSlide {
         _this.number.innerHTML = _this.slideCount + " | 3";
         _this.slideWarp.style.transition = "0.3s";
       }
-      console.log(_this.slideCount);
       if (_this.slideCount == 1) {
         _this.title.innerHTML = "안녕하세요";
         _this.text.innerHTML = "나는 주영";
@@ -83,7 +82,6 @@ class AhnSlide {
         _this.slideWarp.style.transition = "0.3s";
       }
 
-      console.log(_this.slideCount);
       if (_this.slideCount == 1) {
         _this.title.innerHTML = "안녕하세요";
         _this.text.innerHTML = "나는 주영";
@@ -149,7 +147,6 @@ class AhnSlide {
       _this.slideWarp.style.transition = "2.5s";
     }
 
-    console.log(_this.slideCount);
     if (_this.slideCount == 1) {
       _this.title.innerHTML = "안녕하세요";
       _this.text.innerHTML = "나는 주영";

@@ -10,7 +10,7 @@ class JangListSlide {
         this.isMoving = false;
         this.rowImgCount = 10;
         this.isDragDone = true;
-        this.totalImgCount = imgArray.length;//슬라이드 배열 방 개수
+        this.totalImgCount;//슬라이드 배열 방 개수
         this.pageNumberTag = [];
         this.autoPlayFn = "first";
         this.resizeControl = null;
@@ -54,7 +54,12 @@ class JangListSlide {
         _this.nextBtn.classList.add(`${classNameValue}-next-btn`);
         _this.prevBtn.innerHTML = "이전";
         _this.nextBtn.innerHTML = "다음";
-
+        if (imgArray.length % 10 > 0) {
+            _this.totalImgCount = imgArray.length + 10 - imgArray.length % 10;
+        }
+        else if (imgArray.length % 10 === 0) {
+            _this.totalImgCount = imgArray.length;
+        }
         for (let i = 0; i < _this.totalImgCount; i++) {
             _this.imgTags.push(document.createElement('li'));
             _this.pageNumberTag.push(document.createElement('span'));
@@ -63,23 +68,26 @@ class JangListSlide {
             _this.imgTags[i].classList.add(`${classNameValue}-img`);
             _this.pageNumberTag[i].classList.add('page-number');
         }
-
+        
+        _this.imgTags.forEach((el,idx) => {
+            if (idx < imgArray.length) {
+                el.style.backgroundImage = imgArray[idx];
+            }
+        });
         // // ㅜ 이미지 태그 번호 넣기
         // _this.imgTags.forEach((el, idx, arr) => {
         //     el.children[0].innerHTML += `${idx + 1} / ${arr.length}`;
         // })
-        _this.imgTags.forEach((el,idx) => {
-            el.style.backgroundImage = imgArray[idx];
-        });
-        console.log(_this.totalImgCount);
         // ㅜ 첫 번째와 마지막 슬라이드 페이지에 한 번에 보여줄 이미지 개수만큼 복사해놓기
         for (let i = 1; i <= _this.rowImgCount; i++) {
+           
             window[`copyTag${i}`] = _this.imgTags[i - 1].cloneNode(true);
             window[`copyTag${i + _this.rowImgCount}`] = _this.imgTags[_this.imgTags.length - _this.rowImgCount - 1 + i].cloneNode(true);
             _this.slideWrapTag.insertBefore(window[`copyTag${i + _this.rowImgCount}`], _this.imgTags[0]);
             _this.slideWrapTag.appendChild(window[`copyTag${i}`]);
         }
         _this.imgTags = document.querySelectorAll(`[class ^= "${classNameValue}-img"]`);
+
 
         // ㅜ 슬라이드의 width, height, margin 설정하기
         _this.slideContainerTag.style.height = `${_this.slideHeight}vw`;
@@ -172,11 +180,9 @@ class JangListSlide {
         _this.slideContainerTag.onmouseenter = (e) => {
             // e.stopPropagation();
             clearInterval(_this.autoPlayFn);
-            console.log("autoPlayFn out");
             _this.autoPlayFn = null;
 
             clearTimeout(_this.stoppingSetTimeOut);
-            console.log("stoppingSetTimeOut out");
             _this.stoppingSetTimeOut = null;
 
             // ㅜ 게이지 바는 버튼을 클릭하자마자 100%로 채워놓기
@@ -203,7 +209,6 @@ class JangListSlide {
             _this.slideWrapTag.style.transition = "";
 
             clearTimeout(_this.resizeControl);
-            console.log("resizeControl out");
 
             _this.resizeControl = setTimeout(() => {
                 _this.btnControl("next");
@@ -245,13 +250,11 @@ class JangListSlide {
         let _this = this;
         if (_this.autoPlayFn === "first") {
             _this.gage("100%", `${_this.slideSecond}s`);
-            console.log(_this.timerTag.style.transition);
             _this.autoPlayFn = null;
             _this.autoPlay();
         }
         else if (_this.autoPlayFn === null) {
             _this.autoPlayFn = setInterval(() => {
-                console.log("autoPlayFn in");
                 _this.move("next");
             }, _this.slideSecond * 1000);
         }
@@ -319,11 +322,9 @@ class JangListSlide {
         let _this = this;
 
         clearInterval(_this.autoPlayFn);
-        console.log("autoPlayFn out");
         _this.autoPlayFn = null;
 
         clearTimeout(_this.stoppingSetTimeOut);
-        console.log("stoppingSetTimeOut out");
         _this.stoppingSetTimeOut = null;
 
         // ㅜ 게이지 바는 버튼을 클릭하자마자 100%로 채워놓기

@@ -129,7 +129,6 @@
             // 창이 resize 되면 section의 크기가 달라지기 때문에 sectionTags의 top을 0으로 초기화시키고 마지막으로 보았던 해당 section[_this.index]으로 스크롤을 이동시킨다.
             window.onresize = () => {
                 _this.navEvent(_this.index);
-                console.log(_this.index);
                 _this.remoconReMove(_this.theTop);
                 // ㅗ 마지막으로 보았던 section[_this.index] 정보가 들어있다.
                 // ㅗ onclick 안 해도 _this.index 초기 값이 0이기 때문에 메인 페이지 그대로 resize 된다.

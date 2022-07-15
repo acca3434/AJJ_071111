@@ -163,17 +163,13 @@ class JangMainSlide {
             _this.slideWrapTag.style.transition = "";
 
             clearTimeout(_this.resizeControl);
-            console.log("resizeControl out");
 
             _this.resizeControl = setTimeout(() => {
-                console.log("resizeControl in");
 
                 clearInterval(_this.autoPlayFn);
-                console.log("autoPlayFn out");
                 _this.autoPlayFn = null;
 
                 clearTimeout(_this.stoppingSetTimeOut);
-                console.log("stoppingSetTimeOut out");
                 _this.stoppingSetTimeOut = null;
 
                 _this.autoPlayFn = "first";
@@ -218,13 +214,11 @@ class JangMainSlide {
         let _this = this;
         if (_this.autoPlayFn === "first") {
             _this.gage("100%", `${_this.slideSecond}s`);
-            console.log(_this.timerTag.style.transition);
             _this.autoPlayFn = null;
             _this.autoPlay();
         }
         else if (_this.autoPlayFn === null) {
             _this.autoPlayFn = setInterval(() => {
-                console.log("autoPlayFn in");
                 _this.move("next");
             }, _this.slideSecond * 1000);
         }
@@ -292,11 +286,9 @@ class JangMainSlide {
         let _this = this;
 
         clearInterval(_this.autoPlayFn);
-        console.log("autoPlayFn out");
         _this.autoPlayFn = null;
 
         clearTimeout(_this.stoppingSetTimeOut);
-        console.log("stoppingSetTimeOut out");
         _this.stoppingSetTimeOut = null;
 
         // ㅜ 게이지 바는 버튼을 클릭하자마자 100%로 채워놓기

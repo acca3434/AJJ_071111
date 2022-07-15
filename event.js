@@ -13,16 +13,14 @@ function time(){
     let _time = Math.floor(Math.random()*10)* 10000;
     if(mainEvent.style.display == "none"){
         stop = setTimeout(() => {
-        // console.log(_time / 1000+"있다 켜짐");
         mainEvent.style.display = "block";
         console.log("나는뭘까");
         time();
-        },_time);
+        },1);
     }
     else{
         stop = setTimeout(() => {
         mainEvent.style.display = "none";
-        // console.log("1초있다 꺼짐");
         console.log("나는꺼짐이");
         time();
         }, 3000);
