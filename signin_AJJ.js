@@ -1,3 +1,8 @@
+let emailPw = false;
+let justEmail = false;
+let justPw = false;
+let checkArraySignBoolean = new Array(emailPw,justEmail,justPw);
+
 const modal = document.querySelector('.modal');
 const personIcon = document.querySelector('.person-icon');
 let userInfor = {
@@ -22,7 +27,7 @@ personIcon.addEventListener("click", function () {
                 })
             }
     document.getElementById("modalIn").addEventListener("click", function () {
-
+        
             userInfor = {
                 userInputEmail: document.getElementById("inputEmail").value,
                 userInputPw: document.getElementById("inputPw").value
@@ -33,20 +38,36 @@ personIcon.addEventListener("click", function () {
                         if (userInfor.userInputEmail == "" && userInfor.userInputPw == "") {
                             alert("이메일과 비밀번호를 입력해주세요!");
                             break;
-                        } else if (userInfor.userInputEmail == "" && userInfor.userInputPw != "") {
+                        }
+                        else if (userInfor.userInputEmail == "" && userInfor.userInputPw != "") {
                             alert("이메일을 입력해주세요!");
                             break;
-                        } else if (userInfor.userInputEmail != "" && userInfor.userInputPw == "") {
+                        }
+                        else if (userInfor.userInputEmail != "" && userInfor.userInputPw == "") {
                             alert("패스워드를 입력해주세요!");
                             break;
-                        } else if (userInfor.userInputEmail != "" && userInfor.userInputPw != "") {
-                            if (user[key].email != userInfor.userInputEmail && user[key].pw != userInfor.userInputPw) {
-                                alert("정보가 확인되지 않습니다!");
-                            } else if (user[key].email != userInfor.userInputEmail && user[key].pw == userInfor.userInputPw) {
-                                alert("이메일이 확인되지 않습니다!");
-                            } else if (user[key].email == userInfor.userInputEmail && user[key].pw != userInfor.userInputPw) {
-                                alert("패스워드가 맞지 않습니다!");
-                            } else if (user[key].email == userInfor.userInputEmail && user[key].pw == userInfor.userInputPw) {
+                        }
+                        else if (userInfor.userInputEmail != "" && userInfor.userInputPw != "") {
+                            
+                            if (user[key].email != userInfor.userInputEmail && user[key].pw == userInfor.userInputPw) {
+                                checkArraySignBoolean.emailPw = false;     
+                                checkArraySignBoolean.justEmail = true;  
+                                checkArraySignBoolean.justPw = false;
+                            } 
+                            else if (user[key].email == userInfor.userInputEmail && user[key].pw != userInfor.userInputPw) {
+                                checkArraySignBoolean.emailPw = false;     
+                                checkArraySignBoolean.justEmail = false;  
+                                checkArraySignBoolean.justPw = true;
+                            } 
+                            else if (user[key].email != userInfor.userInputEmail && user[key].pw != userInfor.userInputPw) {
+                                checkArraySignBoolean.emailPw = true;     
+                                checkArraySignBoolean.justEmail = false;  
+                                checkArraySignBoolean.justPw = false;         
+                            }
+                            else if (user[key].email == userInfor.userInputEmail && user[key].pw == userInfor.userInputPw) {
+                                checkArraySignBoolean.emailPw = false;     
+                                checkArraySignBoolean.justEmail = false;  
+                                checkArraySignBoolean.justPw = false;
                                 alert(user[key].name + " 환영합니다!");
                                 modal.style.display = 'none';
                                 signInText = document.createElement("p");
@@ -60,6 +81,16 @@ personIcon.addEventListener("click", function () {
                             }
                         }
                     }
+                    if(checkArraySignBoolean.justEmail==true){
+                        alert("이메일이 맞지 않습니다");
+                    }
+                    else if(checkArraySignBoolean.justPw==true){
+                        alert("비밀번호가 맞지 않습니다");
+                    }
+                    else if(checkArraySignBoolean.emailPw==true){
+                        alert("회원님의 정보가 없습니다!");
+                    }
+                    
                 })
             }
         })

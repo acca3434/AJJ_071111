@@ -2,18 +2,18 @@
     "user" : [
         {
             "name" : "주병현",
-            "email" : "wnqudgus1234@gmail.com",  
-            "pw" : "qwer1234"
+            "email" : "1@gmail.com",  
+            "pw" : "1"
         },
         {
             "name" : "장지원",
-            "email" : "wnqudgus2345@gmail.com",  
-            "pw" : "qwer2345"
+            "email" : "2@gmail.com",  
+            "pw" : "2"
         },
         {
             "name" : "안주영",
-            "email" : "wnqudgus3456@gmail.com",  
-            "pw" : "qwer3456"
+            "email" : "3@gmail.com",  
+            "pw" : "3"
         }
     ]
 }
