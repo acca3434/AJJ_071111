@@ -26,7 +26,7 @@ class numberAnimation {
       // console.log(_this.speedPoint);
       // _this.speedAnimation(0);
       _this.increaseTag.classList.add("umber-animation-increase");
-      _JangMainSlide.pageNumberTag[0].appendChild(_this.increaseTag);
+      
       // ㅜ 증가하는 수치를 감소시키기
       _this.increaseTag.innerHTML = `TODAY is<br>0`;
       setTimeout(() => {

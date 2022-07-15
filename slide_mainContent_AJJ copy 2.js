@@ -73,6 +73,9 @@ class JangListSlide {
             if (idx < imgArray.length) {
                 el.style.backgroundImage = imgArray[idx];
             }
+            else {
+                el.innerHTML = "안주장 ♥";
+            }
         });
         // // ㅜ 이미지 태그 번호 넣기
         // _this.imgTags.forEach((el, idx, arr) => {

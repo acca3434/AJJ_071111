@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,12 +8,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
   <link rel="stylesheet" href="css_AJJ.css">
   <link rel="stylesheet" href="/CSS/cartShopCap.css">
 </head>
-
 <body>
   <header class="main-header">
     <div class="logo">
@@ -27,7 +24,6 @@
     <div class="Jang-shop">장지원의 shop</div>
     <div class="search-rank">
       <div class="rank-slide-container">
-
         <ul class="rank-slide-wrap">
           <li class="rank-img1">
             <span class="rank-page-number">산다는 건</span>
@@ -272,6 +268,7 @@
           </div>
         </div>
       </div>
+
     </section>
   </div>
 </body>
@@ -287,10 +284,11 @@ let ajycartUserImg;
 let jjwcartUserImg;
 let jbhcartUserImg;
 </script>
-
 <script src="/JS/search.js"></script>
 <script src="nav_AJJ.js"></script>
 <script src="logo_AJJ.js"></script>
+<script src="number_animation.js"></script>
+<script>  const _numberAnimation = new numberAnimation();</script>
 <script src="slide_mainContent_AJJ copy 2.js"></script>
 <script src="slide_mainContent_AJJ copy.js"></script>
 <script src="signin_AJJ.js"></script>
@@ -307,6 +305,7 @@ let jbhcartUserImg;
   const _signUp = new signUp();
   let _searchRankSlide = new JangRankSlide("rank");
 </script>
+
 <script>
   shopCap().then((cartUserShopInfor)=>{ 
   ajycartUserShopInfor =  cartUserShopInfor.filter((a)=>{
@@ -331,6 +330,5 @@ let _JoolistSlide = new JangListSlide("Joo",3,"cartAllList",jbhcartUserImg);
 let _JanglistSlide = new JangListSlide("Jang",4,"jjw-cart-all-list",jjwcartUserImg); 
 })
 </script>
-<script src="number_animation.js"></script>
-<script>  const _numberAnimation = new numberAnimation();</script>
+
 </html>

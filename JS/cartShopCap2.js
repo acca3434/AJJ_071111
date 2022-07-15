@@ -194,7 +194,7 @@ let cartAllList = document.getElementById("cartAllList");
         if(cartNumberCount==0){
           document.querySelector(".wrapper").style.visibility = "";
         }
-        cartNumberCount++;
+        
         cartBuyListCol[cartListResult] = document.createElement("div");
         cartBuyListCol[cartListResult].classList.add("cart-listCol");
         
@@ -247,6 +247,8 @@ let cartAllList = document.getElementById("cartAllList");
 
         cartUserListPrice[cartListResult] = cartUserShopInfor[key].price;
         document.querySelector(".cart-list-text").appendChild(cartListPText[cartListResult]); 
+        cartListPText[cartListResult].style.visibility = "hidden";
+        cartNumberCount++;
         cartListResult++;
         document.querySelector(".circleNumber").innerHTML = cartNumberCount;
     })
@@ -404,7 +406,7 @@ cartMoreShowBtnjjw.addEventListener("click",function(){
     document.getElementById("cart-Buy-list-row").removeChild(cartBuyListCol[btnCartListIndex]);
     cartListPText.splice(cartListPText[btnCartListIndex],1);
     document.querySelector(".cart-list-text").removeChild(document.getElementById("cartListPText"+[btnCartListIndex]));
-    cartNumberCount--;
+    cartNumberCount=cartNumberCount-1;
     document.querySelector(".circleNumber").innerHTML = cartNumberCount;
    })
 }

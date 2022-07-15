@@ -52,19 +52,19 @@ class JangMainSlide {
         _this.nextBtn.classList.add(`${classNameValue}-next-btn`);
         _this.prevBtn.innerHTML = "이전";
         _this.nextBtn.innerHTML = "다음";
-
         for (let i=0; i < _this.totalImgCount; i++) {
             _this.imgTags.push(document.createElement('li'));
             _this.pageNumberTag.push(document.createElement('span'));
             _this.slideWrapTag.appendChild(_this.imgTags[i]);
             _this.imgTags[i].appendChild(_this.pageNumberTag[i]);
-            _this.imgTags[i].classList.add(`${classNameValue}-img`);
+            _this.imgTags[i].classList.add(`${classNameValue}-img${i}`);
             _this.pageNumberTag[i].classList.add(`${classNameValue}-page-number`);
         }
-
+        
+        _this.pageNumberTag[0].appendChild(_numberAnimation.increaseTag);
         _this.pageNumberTag[1].innerHTML = "'안'녕하세요!<br>저희는 '주'말에도 비가 오나 눈이 오나 지치지 않고<br>열심히 '장'인 정신으로 공부하는 안주장 팀입니다.";
         _this.pageNumberTag[2].innerHTML = "저희 홈페이지에서는<br>여러분들에게 맛나고 즐거운 안주처럼, 따뜻한 에너지를 선사해줄 수 있는 요소들을 찾아<br>소개해드리고 있습니다. 부디 여러분 모두가 이 인생에서 편안히 안주할 수 있기를<br>바라는 마음으로 정성 들여서 만들었습니다.<br>항상 행복하세요!<br>";
-
+        
         // ㅜ 이미지 태그 번호 넣기
         // _this.imgTags.forEach((el, idx, arr) => {
         //     el.children[0].innerHTML += `${idx + 1} / ${arr.length}`;
