@@ -10,8 +10,7 @@ class numberAnimation {
       this.goal = this.year + this.month + this.day;
       this.speedUp = null;
       this.second = [1, 2, 3, 4, 5, 100];
-      this.increaseTag = document.querySelector('.number-animation-increase');
-      
+      this.increaseTag = document.createElement("div");
       this.init();
     }
     init() {
@@ -26,7 +25,8 @@ class numberAnimation {
       // _this.speedPoint.push(_this.goal);
       // console.log(_this.speedPoint);
       // _this.speedAnimation(0);
-
+      _this.increaseTag.classList.add("umber-animation-increase");
+      _JangMainSlide.pageNumberTag[0].appendChild(_this.increaseTag);
       // ㅜ 증가하는 수치를 감소시키기
       _this.increaseTag.innerHTML = `TODAY is<br>0`;
       setTimeout(() => {

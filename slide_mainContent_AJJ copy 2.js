@@ -1,20 +1,20 @@
-class JangMainSlide {
-    constructor(classNameValue, sectionNum) {
+class JangListSlide {
+    constructor(classNameValue, sectionNum, _nextSiblingTag,imgArray) {
         this.index = 1;
         this.endX = null;
-        this.imgTags = [];
+        this.margin = 0.5;
+        this.imgTags = [];//이미지 주소값만 배열에 담아서 순서대로
         this.startX = null;
-        this.rowImgCount = 1;
-        this.slideSecond = 10;
+        this.slideWidth = 60;
+        this.slideSecond = 5;
         this.isMoving = false;
+        this.rowImgCount = 10;
         this.isDragDone = true;
-        this.totalImgCount = 3;
-        this.slideHeight = 97.6;
+        this.totalImgCount = imgArray.length;//슬라이드 배열 방 개수
         this.pageNumberTag = [];
         this.autoPlayFn = "first";
         this.resizeControl = null;
         this.dragSetTimeOut = null;
-        this.slideWidth = 100 - 0.6;
         this.stoppingSetTimeOut = null;
         this.imgWidth = -this.slideWidth;
         this.prevBtn = document.createElement('div');
@@ -22,11 +22,13 @@ class JangMainSlide {
         this.timerTag = document.createElement('div');
         this.slideWrapTag = document.createElement('ul');
         this.timerWrapTag = document.createElement('div');
+        this.slideHeight = this.slideWidth / this.rowImgCount;
         this.slideContainerTag = document.createElement('div');
         this.sectionTag = document.querySelector(`.section${sectionNum}`);
-        this.init(classNameValue);
+        this.nextSiblingTag = document.querySelector(`#${_nextSiblingTag}`);
+        this.init(classNameValue,imgArray);
     }
-    init(classNameValue) {
+    init(classNameValue,imgArray) {
         let _this = this;
 
         // // ㅜ 우클릭, 블럭, 드래그 방지하기
@@ -34,11 +36,11 @@ class JangMainSlide {
         // window.document.onselectstart = new Function("return false");
         // window.document.ondragstart = new Function("return false");
 
-        // ㅜ HTML 태그 설정하기
-        //sectionTag.insertBefore(slideContainerTag);
-        //sectionTag.insertBefore(slideContainerTag, nextSiblingTag);
-        _this.sectionTag.appendChild(_this.slideContainerTag);
-        _this.sectionTag.appendChild(_this.timerWrapTag);
+        //ㅜ HTML 태그 설정하기
+        _this.sectionTag.insertBefore(_this.slideContainerTag, _this.nextSiblingTag);
+        _this.sectionTag.insertBefore(_this.slideContainerTag, _this.nextSiblingTag);
+        //_this.sectionTag.appendChild(_this.slideContainerTag);
+        _this.sectionTag.insertBefore(_this.timerWrapTag, _this.nextSiblingTag);
         _this.timerWrapTag.appendChild(_this.timerTag);
         _this.slideContainerTag.appendChild(_this.slideWrapTag);
         _this.slideContainerTag.appendChild(_this.prevBtn);
@@ -46,30 +48,30 @@ class JangMainSlide {
 
         _this.slideContainerTag.classList.add(`${classNameValue}-slide-container`);
         _this.slideWrapTag.classList.add(`${classNameValue}-slide-wrap`);
-        _this.timerWrapTag.classList.add(`${classNameValue}-timer-wrap`);
+        _this.timerWrapTag.classList.add(`timer-wrap`);
         _this.timerTag.classList.add(`${classNameValue}-timer`);
         _this.prevBtn.classList.add(`${classNameValue}-prev-btn`);
         _this.nextBtn.classList.add(`${classNameValue}-next-btn`);
         _this.prevBtn.innerHTML = "이전";
         _this.nextBtn.innerHTML = "다음";
 
-        for (let i=0; i < _this.totalImgCount; i++) {
+        for (let i = 0; i < _this.totalImgCount; i++) {
             _this.imgTags.push(document.createElement('li'));
             _this.pageNumberTag.push(document.createElement('span'));
             _this.slideWrapTag.appendChild(_this.imgTags[i]);
             _this.imgTags[i].appendChild(_this.pageNumberTag[i]);
             _this.imgTags[i].classList.add(`${classNameValue}-img`);
-            _this.pageNumberTag[i].classList.add(`${classNameValue}-page-number`);
+            _this.pageNumberTag[i].classList.add('page-number');
         }
 
-        _this.pageNumberTag[1].innerHTML = "'안'녕하세요!<br>저희는 '주'말에도 비가 오나 눈이 오나 지치지 않고<br>열심히 '장'인 정신으로 공부하는 안주장 팀입니다.";
-        _this.pageNumberTag[2].innerHTML = "저희 홈페이지에서는<br>여러분들에게 맛나고 즐거운 안주처럼, 따뜻한 에너지를 선사해줄 수 있는 요소들을 찾아<br>소개해드리고 있습니다. 부디 여러분 모두가 이 인생에서 편안히 안주할 수 있기를<br>바라는 마음으로 정성 들여서 만들었습니다.<br>항상 행복하세요!<br>";
-
-        // ㅜ 이미지 태그 번호 넣기
+        // // ㅜ 이미지 태그 번호 넣기
         // _this.imgTags.forEach((el, idx, arr) => {
         //     el.children[0].innerHTML += `${idx + 1} / ${arr.length}`;
         // })
-
+        _this.imgTags.forEach((el,idx) => {
+            el.style.backgroundImage = imgArray[idx];
+        });
+        console.log(_this.totalImgCount);
         // ㅜ 첫 번째와 마지막 슬라이드 페이지에 한 번에 보여줄 이미지 개수만큼 복사해놓기
         for (let i = 1; i <= _this.rowImgCount; i++) {
             window[`copyTag${i}`] = _this.imgTags[i - 1].cloneNode(true);
@@ -80,13 +82,12 @@ class JangMainSlide {
         _this.imgTags = document.querySelectorAll(`[class ^= "${classNameValue}-img"]`);
 
         // ㅜ 슬라이드의 width, height, margin 설정하기
+        _this.slideContainerTag.style.height = `${_this.slideHeight}vw`;
         _this.slideContainerTag.style.width = `${_this.slideWidth}vw`;
-        _this.slideContainerTag.style.height = `${_this.slideHeight}vh`;
         _this.imgTags.forEach((el) => {
-            const margin = 0;
-            el.style.margin = `${margin}vw`;
-            el.style.width = `${_this.slideWidth / _this.rowImgCount - (margin * 2)}vw`;
-            el.style.height = `${_this.slideHeight / _this.rowImgCount - (margin * 2)}vh`;
+            el.style.margin = `${_this.margin}vw`;
+            el.style.width = `${_this.slideHeight - _this.margin * 2}vw`;
+            el.style.height = `${_this.slideHeight - _this.margin * 2}vw`;
         })
 
         // ㅜ 첫 화면에 첫 번째의 이미지 태그가 보이게끔 left 조정하기
@@ -109,7 +110,7 @@ class JangMainSlide {
             _this.btnControl("prev");
         }
 
-        // ㅜ 마우스 왼쪽 버튼을 클릭했을 때
+        // // ㅜ 마우스 왼쪽 버튼을 클릭했을 때
         // _this.slideContainerTag.onmousedown = (e) => {
         //     // ㅜ 맨 앞과 맨 뒤에 복사해 둔 사진의 위치일 때는 드래그 막아놓기
         //     if (_this.index >= (_this.imgTags.length / _this.rowImgCount - 1)) return;
@@ -157,29 +158,55 @@ class JangMainSlide {
         //     _this.gage(`${posX}%`, "");
         // }
 
+        // _this.slideContainerTag.onmouseleave = (e) => {
+        //     if (_this.startX === null) return;
+        //     if (_this.dragSetTimeOut !== null) return;
+        //     console.log("mouseleave");
+
+        //     _this.endX = _this.pxToVw(e.pageX);
+        //     setTimeout(() => {
+        //         _this.dragEvent();
+        //     }, 10);
+        // }
+
+        _this.slideContainerTag.onmouseenter = (e) => {
+            // e.stopPropagation();
+            clearInterval(_this.autoPlayFn);
+            console.log("autoPlayFn out");
+            _this.autoPlayFn = null;
+
+            clearTimeout(_this.stoppingSetTimeOut);
+            console.log("stoppingSetTimeOut out");
+            _this.stoppingSetTimeOut = null;
+
+            // ㅜ 게이지 바는 버튼을 클릭하자마자 100%로 채워놓기
+            _this.gage("100%", "");
+        }
+
+        _this.slideContainerTag.addEventListener('mouseleave', () => {
+            // ㅜ move() 안에 있는 게이지 바의 0% 트랜지션과 겹치지 않게 텀 두기
+            setTimeout(() => {
+                _this.isMoving = false;
+                _this.move("next");
+
+                // ㅜ move() 안에 있는 게이지 바의 100% 트랜지션이 종료됨과 동시에 setInterval의 첫 실행이 이뤄지게 하기
+                setTimeout(() => {
+                    _this.autoPlay();
+                }, _this.slideSecond * 1000);
+            }, 10);
+        })
+
         // 창의 크기가 변경될 때
         window.addEventListener("resize", () => {
-            _this.gage("0%", "");
+            
+            _this.gage("100%", "");
             _this.slideWrapTag.style.transition = "";
 
             clearTimeout(_this.resizeControl);
             console.log("resizeControl out");
 
             _this.resizeControl = setTimeout(() => {
-                console.log("resizeControl in");
-
-                clearInterval(_this.autoPlayFn);
-                console.log("autoPlayFn out");
-                _this.autoPlayFn = null;
-
-                clearTimeout(_this.stoppingSetTimeOut);
-                console.log("stoppingSetTimeOut out");
-                _this.stoppingSetTimeOut = null;
-
-                _this.autoPlayFn = "first";
-                setTimeout(() => {
-                    _this.autoPlay();
-                }, 10);
+                _this.btnControl("next");
             }, 500);
         })
 
@@ -329,7 +356,7 @@ class JangMainSlide {
     //             _this.startX = null;
     //             _this.endX = null;
     //             _this.dragSetTimeOut = null;
-    
+
     //             _this.autoPlay();
     //         }, _this.slideSecond * 1000);
     //     }
@@ -346,7 +373,7 @@ class JangMainSlide {
     //                 _this.startX = null;
     //                 _this.endX = null;
     //                 _this.dragSetTimeOut = null;
-        
+
     //                 _this.autoPlay();
     //             }, _this.slideSecond * 1000);
     //         }, _this.slideSecond * 1000);

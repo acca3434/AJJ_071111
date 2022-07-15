@@ -445,6 +445,7 @@
   
   .main-slide-wrap, .Ahn-slide-wrap, .Joo-slide-wrap, .Jang-slide-wrap {
     display: flex;
+    position: absolute;
     left: 0;
   }
   
@@ -471,7 +472,6 @@
     display: flex;
   }
   [class ^= "Ahn-img"], [class ^= "Joo-img"], [class ^= "Jang-img"]{
-    position: absolute;
     background-size: cover;
     background-color: skyblue;
     justify-content: center;
@@ -483,6 +483,12 @@
     justify-content: center;
     align-items: center;
     display: flex;
+  }  
+  .main-page-number {
+    text-align: center;
+    font-weight: 900;
+    font-size: 3vw;
+    color: white;
   }
   
   .page-number {
